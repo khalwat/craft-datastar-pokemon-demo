@@ -1,0 +1,20 @@
+{# @var store \attributes\stores\FacetedSearch #}
+
+<div id="search-results">
+    {% set results = [] %}
+    {% if store.search is not empty %}
+        {% set results = craft.entries()
+            .section(['pokemon'])
+            .limit(9)
+            .search(store.search)
+            .orderBy('score')
+            .all() %}
+    {% endif %}
+    <ul>
+        {% for result in results %}
+            <li><a href="{{ result.url }}">{{ result.title }}</a></li>
+        {% else %}
+            <p>No results</p>
+        {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,147 @@
+color: null
+fieldLayouts:
+  f4a5fd0d-b52f-4cf0-88ba-dfb8a4051cc0:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2024-10-23T03:03:15+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 885e84c8-1cd5-4da5-ad7b-f006377662c3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-23T03:10:03+00:00'
+            elementCondition: null
+            fieldUid: ade48870-fb7a-45ac-b67e-49280f86bbf9 # Pokemon ID
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ac1d2103-e609-4b15-bace-637dfa5fff84
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-23T03:10:03+00:00'
+            elementCondition: null
+            fieldUid: 16fbb94e-96c0-4975-9b76-3a6df522bd66 # Pokemon Name
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b0f02c45-dc8b-47dc-8659-6ef2ec1607cb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-23T03:10:03+00:00'
+            elementCondition: null
+            fieldUid: fffe759b-abaa-4b1b-ae46-ab2a190a7de2 # Pokemon Form
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 168c6ef4-8a9a-4d70-af50-e9af678b3ceb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-23T03:10:03+00:00'
+            elementCondition: null
+            fieldUid: 1bf43a41-5dfc-4611-97df-f0cea95ca67e # Type1
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8272628b-f6fd-4c07-b205-858824452ee2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-23T03:10:03+00:00'
+            elementCondition: null
+            fieldUid: 327e7a50-98c7-489c-9f95-0881d780ab05 # Type2
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 582f41b6-f76b-4dcc-b05e-5b1b7643e4d5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-10-23T03:14:55+00:00'
+            elementCondition: null
+            fieldUid: 9e5b80ba-b398-4d20-b97e-c2684f1f5322 # Generation
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 891aac25-545f-4d0b-83cb-8a29dd044df4
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: f880703b-02de-44e0-9e59-0b044f803d10
+        userCondition: null
+handle: pokemon
+hasTitleField: true
+icon: rabbit
+name: pokemon
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

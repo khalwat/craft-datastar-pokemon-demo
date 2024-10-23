@@ -23,7 +23,7 @@
 use craft\helpers\App;
 
 /**
- * Database is from https://www.sqlitetutorial.net/sqlite-sample-database/
+ * Pokemon database is from https://github.com/lgreski/pokemonData
  */
 
 return [

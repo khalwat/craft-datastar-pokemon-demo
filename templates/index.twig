@@ -20,6 +20,19 @@
             </div>
         </div>
     </section>
+
+    <section data-store="{ search: ''}">
+        <h3>Spark search</h3>
+
+        <input
+            data-model="search"
+            data-on-input.debounce_500ms="{{ spark('_spark/faceted-search.twig') }}"
+            placeholder="Search..."
+            type="text"
+        />
+        <div id="search-results">
+        </div>
+    </section>
 {% endblock %}
 
 {# -- Content that appears after the primary content block -- #}
