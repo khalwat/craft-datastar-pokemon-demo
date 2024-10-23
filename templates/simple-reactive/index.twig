@@ -23,6 +23,12 @@
 
     <section data-store="{ input: ''}">
         <div class="text-center">
+            {#
+            <button
+                class="btn btn-primary m-3"
+                data-on-click="$input='woof'; alert('Set it to woof!');">Set it to 'woof'!
+            </button>
+            #}
             <h3 class="text-3xl p-3">Type something:</h3>
             <input
                 class="input w-full max-w-xs p-3"
