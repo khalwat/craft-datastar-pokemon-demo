@@ -1,0 +1,32 @@
+{
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "craftcms/ckeditor": "^4.0.0",
+    "craftcms/cms": "^5.0.0",
+    "craftcms/feed-me": "6.0.0",
+    "nystudio107/craft-twig-base-templates": "^1.0",
+    "nystudio107/twig-bundle-installer": "^1.1",
+    "putyourlightson/craft-spark": "^0.0.8",
+    "vlucas/phpdotenv": "^5.4.0"
+  },
+  "require-dev": {
+    "craftcms/generator": "2.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "attributes\\": "src/attributes/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "craftcms/plugin-installer": true,
+      "yiisoft/yii2-composer": true,
+      "nystudio107/twig-bundle-installer": true
+    },
+    "sort-packages": true,
+    "platform": {
+      "php": "8.2"
+    }
+  }
+}
