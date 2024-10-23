@@ -1,0 +1,46 @@
+{% extends "vendor/nystudio107/craft-twig-base-templates/templates/_layouts/html-page.twig" %}
+
+{% block headLinks %}
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+{% endblock headLinks %}
+
+{# -- Content that appears before the primary content block -- #}
+{% block preContent %}
+{% endblock %}
+
+{# -- Primary content block -- #}
+{% block content %}
+    <section>
+        <div class="hero bg-base-200">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <h1 class="text-5xl font-bold">Simple reactive demo</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section data-store="{ input: ''}">
+        <div class="text-center">
+            <h3 class="text-3xl p-3">Type something:</h3>
+            <input
+                class="input w-full max-w-xs p-3"
+                data-model="input"
+                data-on-input.debounce_500ms="{{ spark('_spark/faceted-search.twig') }}"
+                placeholder=""
+                type="text"
+            />
+            <p class="text-3xl p-3" data-text="$input"></p>
+        </div>
+    </section>
+{% endblock %}
+
+{# -- Content that appears after the primary content block -- #}
+{% block postContent %}
+{% endblock %}
+
+{# -- Any <script></script> tags that should be included before </body> -- #}
+{% block bodyScripts %}
+    {{ parent() }}
+{% endblock bodyScripts %}
