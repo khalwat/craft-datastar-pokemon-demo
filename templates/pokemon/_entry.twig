@@ -1,0 +1,32 @@
+{% extends "vendor/nystudio107/craft-twig-base-templates/templates/_layouts/html-page.twig" %}
+
+{% block headLinks %}
+    <link href="{{ alias('@web/css/daisyui-full.min.css') }}" rel="stylesheet" type="text/css"/>
+    <script src="{{ alias('@web/js/tailwindcss.min.js') }}"></script>
+{% endblock headLinks %}
+
+{# -- Content that appears before the primary content block -- #}
+{% block preContent %}
+    <section>
+        <div class="hero bg-base-200">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <h1 class="text-5xl font-bold">{{ entry.title }}</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{# -- Primary content block -- #}
+{% block content %}
+{% endblock %}
+
+{# -- Content that appears after the primary content block -- #}
+{% block postContent %}
+{% endblock %}
+
+{# -- Any <script></script> tags that should be included before </body> -- #}
+{% block bodyScripts %}
+    {{ parent() }}
+{% endblock bodyScripts %}
