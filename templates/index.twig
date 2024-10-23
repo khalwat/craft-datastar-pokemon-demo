@@ -1,8 +1,8 @@
 {% extends "vendor/nystudio107/craft-twig-base-templates/templates/_layouts/html-page.twig" %}
 
 {% block headLinks %}
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css"/>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="{{ alias('@web/css/daisyui-full.min.css') }}" rel="stylesheet" type="text/css"/>
+    <script src="{{ alias('@web/js/tailwindcss.min.js') }}"></script>
 {% endblock headLinks %}
 
 {# -- Content that appears before the primary content block -- #}
