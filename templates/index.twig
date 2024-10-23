@@ -7,10 +7,6 @@
 
 {# -- Content that appears before the primary content block -- #}
 {% block preContent %}
-{% endblock %}
-
-{# -- Primary content block -- #}
-{% block content %}
     <section>
         <div class="hero bg-base-200">
             <div class="hero-content text-center">
@@ -20,10 +16,12 @@
             </div>
         </div>
     </section>
+{% endblock %}
 
-    <section data-store="{ search: ''}">
+{# -- Primary content block -- #}
+{% block content %}
+    <section data-store="{{ sparkStoreFromClass('attributes\\stores\\FacetedSearch') }}">
         <h3>Spark search</h3>
-
         <input
             data-model="search"
             data-on-input.debounce_500ms="{{ spark('_spark/faceted-search.twig') }}"
