@@ -3,15 +3,12 @@
 {% import "_includes/macros.twig" as macros %}
 
 {% set backgroundColor = macros.colorFromType(pokemon.type1) | spaceless %}
-{% set img = craft.assets.volume('pokemon').title(pokemon.pokemonId).one() %}
-{% if not img %}
-    {% set img = craft.assets.volume('pokemon').title('0').one() %}
-{% endif %}
+{% set imgUrl = macros.pokemonImageFromId(pokemon.pokemonId) | spaceless %}
 <div class="card bg-base-100 w-96 shadow-xl">
     <div class="{{ macros.pokemonGradientClasses(backgroundColor) }}">
         <figure class="p-10">
             <img
-                src="{{ img.url }}"
+                src="{{ imgUrl }}"
                 alt="{{ pokemon.pokemonName }}"/>
         </figure>
     </div>
