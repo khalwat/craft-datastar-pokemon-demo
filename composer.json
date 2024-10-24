@@ -15,7 +15,8 @@
   },
   "autoload": {
     "psr-4": {
-      "attributes\\": "src/attributes/"
+      "attributes\\": "src/attributes/",
+      "models\\": "src/models/"
     }
   },
   "config": {
