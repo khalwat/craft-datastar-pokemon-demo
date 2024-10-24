@@ -1,5 +1,5 @@
 {# @var response \craft\web\Response #}
-{# @var store \attributes\stores\PokemonStore #}
+{# @var store \attributes\stores\PokemonEdit #}
 {% set response = spark.runAction('entries/save-entry', {
     entryId: store.entryId,
     fields: { pokemonName: store.pokemonName },
