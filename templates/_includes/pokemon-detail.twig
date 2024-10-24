@@ -1,28 +1,29 @@
 {# @var pokemon \craft\elements\Entry #}
-{# @var store \attributes\stores\PokemonEntryType #}
-{% set pokemonEntryProperties = {
+
+{# Create a PokemonEntryType and then populated it from values coming from the `pokemon` entry #}
+{# @var pokemonStore \attributes\stores\PokemonEntryType #}
+{% set pokemonStore = create('attributes\\stores\\PokemonEntryType') %}
+{% set pokemonStore = pokemonStore | reduce(
+    (carry, value, key) => carry | merge({ (key): pokemon[key] ?? null }),
+    {}) %}
+{# Set store values that do not come from the `pokemon` entry #}
+{% set pokemonStore = pokemonStore | merge({
     entryId: pokemon.id,
-    pokemonId: pokemon.pokemonId,
-    pokemonName: pokemon.pokemonName,
-    type1: pokemon.type1,
-    type2: pokemon.type2,
-    generation: pokemon.generation,
-} %}
+    editing: false,
+}) %}
 
 {% import "_includes/macros.twig" as macros %}
 
 {% set backgroundColor = macros.colorFromType(pokemon.type1) | spaceless %}
-{% set img = craft.assets.volume('pokemon').title(pokemon.pokemonId).one() %}
-{% if not img %}
-    {% set img = craft.assets.volume('pokemon').title('0').one() %}
-{% endif %}
-<div class="card bg-base-100 w-96 shadow-xl rounded-lg overflow-hidden m-2"
-     data-store="{{ sparkStoreFromClass('attributes\\stores\\PokemonEntryType', pokemonEntryProperties) }}"
+{% set imgUrl = macros.pokemonImageFromId(pokemon.pokemonId) | spaceless %}
+<div class="card bg-base-100 w-50 shadow-xl rounded-lg overflow-hidden m-2"
+     data-store="{{ sparkStore(pokemonStore) }}"
 >
+    <h3 class="m-3 text-3xl text-center"><a href="/">&larr; index &nbsp;</a></h3>
     <div class="{{ macros.pokemonGradientClasses(backgroundColor) }}">
         <figure class="p-10">
             <img
-                src="{{ img.url }}"
+                src="{{ imgUrl }}"
                 alt="{{ pokemon.pokemonName }}"/>
         </figure>
     </div>
