@@ -1,6 +1,8 @@
 {# @var pokemon \craft\elements\Entry #}
 {# @var store \attributes\stores\PokemonDetail #}
 
+{% import "_includes/macros.twig" as macros %}
+
 {# Create a PokemonEntryType and then populated it from values coming from the `pokemon` entry #}
 {# @var pokemonEntry \models\PokemonEntryType #}
 {% set attributesMap = {
@@ -10,8 +12,6 @@
 {% set pokemonEntry = pokemonEntry | reduce(
     (carry, value, key) => carry | merge({ (key): pokemon[attributesMap[key] ?? key] ?? null }),
     {}) %}
-
-{% import "_includes/macros.twig" as macros %}
 
 {% set backgroundColor = macros.colorFromType(pokemon.type1) | spaceless %}
 {% set imgUrl = macros.pokemonImageFromId(pokemon.pokemonId) | spaceless %}
