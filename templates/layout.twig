@@ -1,0 +1,9 @@
+{% extends "vendor/nystudio107/craft-twig-base-templates/templates/_layouts/html-page.twig" %}
+
+{% block htmlTag %}
+<html
+    lang="{{ craft.app.language | slice(0,2) }}"
+    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#"
+    data-theme="dark"
+>
+{% endblock htmlTag %}
