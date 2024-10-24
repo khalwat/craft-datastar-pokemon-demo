@@ -1,6 +1,6 @@
 <?php
 
-namespace attributes;
+namespace attributes\stores;
 
 use Attribute;
 

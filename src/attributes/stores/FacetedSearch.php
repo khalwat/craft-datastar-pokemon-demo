@@ -3,7 +3,6 @@
 namespace attributes\stores;
 
 use Attribute;
-use attributes\PokemonEntryType;
 use putyourlightson\spark\models\StoreModel;
 
 #[Attribute]
@@ -20,7 +19,4 @@ class FacetedSearch extends StoreModel
 
     /** @var int The number of items returned by the search */
     public int $resultsCount = 0;
-
-    /** @var PokemonEntryType The Pokemon entry data */
-    public PokemonEntryType $pokemonEntry;
 }

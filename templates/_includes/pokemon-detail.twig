@@ -17,7 +17,7 @@
     {% set img = craft.assets.volume('pokemon').title('0').one() %}
 {% endif %}
 <div class="card bg-base-100 w-96 shadow-xl rounded-lg overflow-hidden m-2"
-     data-store="{{ sparkStoreFromClass('attributes\\PokemonEntryType', pokemonEntryProperties) }}"
+     data-store="{{ sparkStoreFromClass('attributes\\stores\\PokemonEntryType', pokemonEntryProperties) }}"
 >
     <div class="{{ macros.pokemonGradientClasses(backgroundColor) }}">
         <figure class="p-10">
