@@ -1,7 +1,6 @@
 {# @var response \craft\web\Response #}
 {# @var store \attributes\stores\PokemonEntryType #}
 {% set response = spark.runAction('entries/save-entry', {
-    sectionId: 1,
     title: store.pokemonName
 }) %}
 {% if response.isSuccessful %}
