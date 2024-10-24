@@ -17,7 +17,7 @@
     {% set img = craft.assets.volume('pokemon').title('0').one() %}
 {% endif %}
 <div class="card bg-base-100 w-96 shadow-xl rounded-lg overflow-hidden m-2"
-    data-store="{{ sparkStoreFromClass('attributes\\stores\\PokemonEntryType', pokemonEntryProperties) }}"
+     data-store="{{ sparkStoreFromClass('attributes\\PokemonEntryType', pokemonEntryProperties) }}"
 >
     <div class="{{ macros.pokemonGradientClasses(backgroundColor) }}">
         <figure class="p-10">
@@ -28,7 +28,7 @@
     </div>
     <div class="card-body space-y-2 {{ macros.cardGradientClasses() }}">
         <div class="space-y-2"
-            data-show="!$editing"
+             data-show="!$editing"
         >
             <p>
                 Type: {{ pokemon.type1 }} / {{ pokemon.type2 }}
@@ -38,34 +38,34 @@
             </p>
             <div class="card-actions justify-end">
                 <button class="btn btn-primary"
-                    data-on-click="$editing = true"
-                    data-show="!$editing"
+                        data-on-click="$editing = true"
+                        data-show="!$editing"
                 >
                     Edit
                 </button>
             </div>
         </div>
         <div class="space-y-2" style="display: none"
-            data-show="$editing"
+             data-show="$editing"
         >
             <p class="space-y-2">
                 <label for="name">Name:</label>
                 <input type="text"
-                    id="name"
-                    class="input input-bordered w-full"
-                    data-model="pokemonName"
+                       id="name"
+                       class="input input-bordered w-full"
+                       data-model="pokemonName"
                 >
             </p>
             <div class="card-actions justify-end">
                 <button class="btn btn-neutral"
-                    data-on-click="$editing = false"
-                    data-show="$editing"
+                        data-on-click="$editing = false"
+                        data-show="$editing"
                 >
                     Cancel
                 </button>
                 <button class="btn btn-primary"
-                    data-on-click="{{ spark('_spark/save-entry.twig', method: 'post') }}"
-                    data-show="$editing"
+                        data-on-click="{{ spark('_spark/save-entry.twig', method: 'post') }}"
+                        data-show="$editing"
                 >
                     Save
                 </button>
