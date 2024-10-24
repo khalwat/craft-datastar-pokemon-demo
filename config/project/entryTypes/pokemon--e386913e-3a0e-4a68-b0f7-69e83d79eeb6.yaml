@@ -68,22 +68,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-10-24T02:40:23+00:00'
-            elementCondition: null
-            fieldUid: 0119e14d-183f-402e-94fe-12360885f7e4 # Pokemon Image
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 735f7371-e6d3-4ef1-a0d1-cc5132ada906
-            userCondition: null
-            warning: null
-            width: 100
-          -
             dateAdded: '2024-10-23T03:10:03+00:00'
             elementCondition: null
             fieldUid: fffe759b-abaa-4b1b-ae46-ab2a190a7de2 # Pokemon Form
