@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4fec9abc46d13b2e88d6c2535d27571f",
+    "content-hash": "58c4cf23425bbfdbb6951619a821ea40",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -711,16 +711,16 @@
         },
         {
             "name": "craftcms/feed-me",
-            "version": "6.0.0",
+            "version": "6.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/feed-me.git",
-                "reference": "0451b2db17cc7c2f4c560f77b28d2e95047d65a9"
+                "reference": "c627253a286c0e3869a307aaa9a730a7d060d4a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/0451b2db17cc7c2f4c560f77b28d2e95047d65a9",
-                "reference": "0451b2db17cc7c2f4c560f77b28d2e95047d65a9",
+                "url": "https://api.github.com/repos/craftcms/feed-me/zipball/c627253a286c0e3869a307aaa9a730a7d060d4a2",
+                "reference": "c627253a286c0e3869a307aaa9a730a7d060d4a2",
                 "shasum": ""
             },
             "require": {
@@ -728,7 +728,7 @@
                 "craftcms/cms": "^5.0.0-beta.2",
                 "jakeasmith/http_build_url": "^1.0",
                 "league/csv": "^9.0",
-                "nesbot/carbon": "^3.0.0",
+                "nesbot/carbon": "^2.10|^3.0.0",
                 "php": "^8.2",
                 "seld/jsonlint": "^1.7"
             },
@@ -771,13 +771,13 @@
                 "feed me"
             ],
             "support": {
-                "docs": "https://docs.craftcms.com/feed-me/v4/",
+                "docs": "https://docs.craftcms.com/feed-me/v6/",
                 "email": "support@craftcms.com",
                 "issues": "https://github.com/craftcms/feed-me/issues?state=open",
                 "rss": "https://github.com/craftcms/feed-me/commits/master.atom",
                 "source": "https://github.com/craftcms/feed-me"
             },
-            "time": "2024-03-19T20:40:36+00:00"
+            "time": "2024-10-15T22:56:22+00:00"
         },
         {
             "name": "craftcms/html-field",
@@ -2195,16 +2195,16 @@
         },
         {
             "name": "league/container",
-            "version": "4.2.2",
+            "version": "4.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/container.git",
-                "reference": "ff346319ca1ff0e78277dc2311a42107cc1aab88"
+                "reference": "72f9bebe7bd623007782a40f5ec305661ab706d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/container/zipball/ff346319ca1ff0e78277dc2311a42107cc1aab88",
-                "reference": "ff346319ca1ff0e78277dc2311a42107cc1aab88",
+                "url": "https://api.github.com/repos/thephpleague/container/zipball/72f9bebe7bd623007782a40f5ec305661ab706d8",
+                "reference": "72f9bebe7bd623007782a40f5ec305661ab706d8",
                 "shasum": ""
             },
             "require": {
@@ -2265,7 +2265,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/container/issues",
-                "source": "https://github.com/thephpleague/container/tree/4.2.2"
+                "source": "https://github.com/thephpleague/container/tree/4.2.3"
             },
             "funding": [
                 {
@@ -2273,7 +2273,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-03-13T13:12:53+00:00"
+            "time": "2024-10-23T12:06:58+00:00"
         },
         {
             "name": "league/csv",

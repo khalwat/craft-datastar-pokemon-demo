@@ -4,7 +4,7 @@
   "require": {
     "craftcms/ckeditor": "^4.0.0",
     "craftcms/cms": "^5.0.0",
-    "craftcms/feed-me": "6.0.0",
+    "craftcms/feed-me": "^6.0.0",
     "nystudio107/craft-twig-base-templates": "^1.0",
     "nystudio107/twig-bundle-installer": "^1.1",
     "putyourlightson/craft-spark": "^0.0.8",
