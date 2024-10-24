@@ -3,20 +3,20 @@
 {% fragment %}
     <div id="search-results">
         {% set results = [] %}
-        {% set query = craft.entries()
-            .section(['pokemon'])
-            .search(store.search)
-            .orderBy('score') %}
-        {# Handle the generation facet #}
-        {% if store.generation > 0 %}
-            {% do query.generation(store.generation) %}
-        {% endif %}
-        {# Handle the generation facet #}
-        {% if store.type != 'all' %}
-            {% do query.type1(store.type) %}
-        {% endif %}
         {# If the search string isn't empty, execute the query #}
         {% if store.search is not empty %}
+            {% set query = craft.entries()
+                .section(['pokemon'])
+                .search(store.search)
+                .orderBy('score') %}
+            {# Handle the generation facet #}
+            {% if store.generation > 0 %}
+                {% do query.generation(store.generation) %}
+            {% endif %}
+            {# Handle the generation facet #}
+            {% if store.type != 'all' %}
+                {% do query.type1(store.type) %}
+            {% endif %}
             {% set results = query.all() %}
         {% endif %}
         <div class="w-full overflow-x-scroll">
