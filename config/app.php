@@ -23,7 +23,8 @@
 use craft\helpers\App;
 
 /**
- * Pokemon database is from https://github.com/lgreski/pokemonData
+ * Pokemon database is from: https://github.com/lgreski/pokemonData
+ * Pokemon images are from: https://www.kaggle.com/datasets/arenagrenade/the-complete-pokemon-images-data-set
  */
 
 return [
