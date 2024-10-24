@@ -15,7 +15,7 @@
         <div class="hero bg-base-200">
             <div class="hero-content text-center">
                 <div class="max-w-md">
-                    <h1 class="text-5xl font-bold">Spark / Datastar Pokemon demo</h1>
+                    <h1 class="text-5xl font-bold">Spark / Datastar Pokedex</h1>
                 </div>
             </div>
         </div>
@@ -37,9 +37,11 @@
             />
             <div class="inline" style="display: none"
                  data-show="$search != ''"
-            >
-                {# The generation facet #}
-                <label for="generation-field" class="">Generation</label>
+            ></div>
+
+            {# The generation facet #}
+            <div class="inline m-3">
+                <label for="generation-field" class="mr-2">Generation</label>
                 <select
                     id="generation-field"
                     class="select select-bordered max-w-xs"
@@ -48,8 +50,10 @@
                     data-on-change="{{ spark('_spark/faceted-search.twig') }}">
                     {{ include("_includes/generation-options.twig") }}
                 </select>
-                {# The type facet #}
-                <label for="type-field" class="">Type</label>
+            </div>
+            {# The type facet #}
+            <div class="inline m-3">
+                <label for="type-field" class="mr-2">Type</label>
                 <select
                     id="type-field"
                     class="select select-bordered max-w-xs"
