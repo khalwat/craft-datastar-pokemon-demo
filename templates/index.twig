@@ -35,26 +35,30 @@
                 placeholder="Search..."
                 type="text"
             />
-            {# The generation facet #}
-            <label for="generation-field" class="">Generation</label>
-            <select
-                id="generation-field"
-                class="select select-bordered max-w-xs"
-                name="generation"
-                data-model="generation"
-                data-on-change="{{ spark('_spark/faceted-search.twig') }}">
-                {{ include("includes/generation-options.twig") }}
-            </select>
-            {# The type facet #}
-            <label for="type-field" class="">Type</label>
-            <select
-                id="type-field"
-                class="select select-bordered max-w-xs"
-                name="type"
-                data-model="type"
-                data-on-change="{{ spark('_spark/faceted-search.twig') }}">
-                {{ include("includes/type-options.twig") }}
-            </select>
+            <div class="inline"
+                 data-show="$search != ''"
+            >
+                {# The generation facet #}
+                <label for="generation-field" class="">Generation</label>
+                <select
+                    id="generation-field"
+                    class="select select-bordered max-w-xs"
+                    name="generation"
+                    data-model="generation"
+                    data-on-change="{{ spark('_spark/faceted-search.twig') }}">
+                    {{ include("includes/generation-options.twig") }}
+                </select>
+                {# The type facet #}
+                <label for="type-field" class="">Type</label>
+                <select
+                    id="type-field"
+                    class="select select-bordered max-w-xs"
+                    name="type"
+                    data-model="type"
+                    data-on-change="{{ spark('_spark/faceted-search.twig') }}">
+                    {{ include("includes/type-options.twig") }}
+                </select>
+            </div>
             {# The search results #}
             <div id="search-results">
             </div>
