@@ -3,6 +3,7 @@
 namespace attributes\stores;
 
 use Attribute;
+use attributes\PokemonEntryType;
 use putyourlightson\spark\models\StoreModel;
 
 #[Attribute]
