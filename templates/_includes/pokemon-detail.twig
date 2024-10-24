@@ -1,16 +1,14 @@
-{% set store = {
-    pokemonName: pokemon.pokemonName,
-    entryId: pokemon.id,
-    editing: false,
-} %}
-
 {% import "_includes/macros.twig" as macros %}
 
 {% set backgroundColor = macros.colorFromType(pokemon.type1) | spaceless %}
 {% set imgUrl = macros.pokemonImageFromId(pokemon.pokemonId) | spaceless %}
 <h3 class="m-3 text-3xl text-center"><a href="/">&larr; back &nbsp;</a></h3>
 <div class="card bg-base-100 w-50 shadow-xl rounded-lg overflow-hidden m-2"
-     data-store="{{ sparkStore(store) }}"
+     data-store="{{ sparkStoreFromClass('attributes\\stores\\PokemonEdit', {
+        entryId: pokemon.id,
+        pokemonName: pokemon.pokemonName,
+        editing: false,
+     }) }}"
 >
     <div class="{{ macros.pokemonGradientClasses(backgroundColor) }}">
         <figure class="p-10">
@@ -46,7 +44,7 @@
                 <input type="text"
                        id="name"
                        class="input input-bordered w-full"
-                       data-model="pokemonEntry.pokemonName"
+                       data-model="pokemonName"
                 >
             </p>
             <div class="card-actions justify-end">
