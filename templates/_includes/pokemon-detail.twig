@@ -1,15 +1,8 @@
-{# @var pokemon \craft\elements\Entry #}
-{# @var store \attributes\stores\PokemonDetail #}
-
-{# Create a PokemonEntryType and then populated it from values coming from the `pokemon` entry #}
-{# @var pokemonEntry \models\PokemonEntryType #}
-{% set attributesMap = {
-    'entryId': 'id'
+{% set store = {
+    pokemonName: pokemon.pokemonName,
+    entryId: pokemon.id,
+    editing: false,
 } %}
-{% set pokemonEntry = create('models\\PokemonEntryType') %}
-{% set pokemonEntry = pokemonEntry | reduce(
-    (carry, value, key) => carry | merge({ (key): pokemon[attributesMap[key] ?? key] ?? null }),
-    {}) %}
 
 {% import "_includes/macros.twig" as macros %}
 
@@ -17,10 +10,7 @@
 {% set imgUrl = macros.pokemonImageFromId(pokemon.pokemonId) | spaceless %}
 <h3 class="m-3 text-3xl text-center"><a href="/">&larr; back &nbsp;</a></h3>
 <div class="card bg-base-100 w-50 shadow-xl rounded-lg overflow-hidden m-2"
-     data-store="{{ sparkStoreFromClass('attributes\\stores\\PokemonDetail', {
-         pokemonEntry: pokemonEntry,
-         editing: false
-     }) }}"
+     data-store="{{ sparkStore(store) }}"
 >
     <div class="{{ macros.pokemonGradientClasses(backgroundColor) }}">
         <figure class="p-10">
