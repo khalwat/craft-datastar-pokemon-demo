@@ -1,5 +1,7 @@
 {% extends "vendor/nystudio107/craft-twig-base-templates/templates/_layouts/html-page.twig" %}
 
+{% import "includes/macros.twig" as macros %}
+
 {% block headLinks %}
     <link href="{{ alias('@web/css/daisyui-full.min.css') }}" rel="stylesheet" type="text/css"/>
     <script src="{{ alias('@web/js/tailwindcss.min.js') }}"></script>
@@ -7,6 +9,8 @@
 
 {# -- Content that appears before the primary content block -- #}
 {% block preContent %}
+    {% set backgroundColor = macros.colorFromType('Grass') | spaceless %}
+
     <section>
         <div class="hero bg-base-200">
             <div class="hero-content text-center">
@@ -21,14 +25,41 @@
 {# -- Primary content block -- #}
 {% block content %}
     <section data-store="{{ sparkStoreFromClass('attributes\\stores\\FacetedSearch') }}">
-        <h3>Spark search</h3>
-        <input
-            data-model="search"
-            data-on-input.debounce_500ms="{{ spark('_spark/faceted-search.twig') }}"
-            placeholder="Search..."
-            type="text"
-        />
-        <div id="search-results">
+        <div class="text-center align-baseline">
+            {# The search field #}
+            <input
+                id="search-field"
+                class="input input-bordered w-full max-w-xs m-3"
+                data-model="search"
+                data-on-input.debounce_500ms="{{ spark('_spark/faceted-search.twig') }}"
+                placeholder="Search..."
+                type="text"
+            />
+            {# The generation facet #}
+            <label for="generation-field" class="">Generation</label>
+            <select
+                id="generation-field"
+                class="input input-bordered m-3"
+                name="generation"
+                data-model="generation"
+                data-on-change="{{ spark('_spark/faceted-search.twig') }}">
+                {{ include("includes/generation-options.twig") }}
+            </select>
+            {# The type facet #}
+            <label for="type-field" class="">Type</label>
+            <select
+                id="type-field"
+                class="input input-bordered m-3"
+                name="type"
+                data-model="type"
+                data-on-change="{{ spark('_spark/faceted-search.twig') }}">
+                {{ include("includes/type-options.twig") }}
+            </select>
+            {# The search results #}
+            <div id="search-results">
+            </div>
+            {# The number of displayed results #}
+            <p>Total Pokemon: <span data-text="$resultsCount"></span></p>
         </div>
     </section>
 {% endblock %}

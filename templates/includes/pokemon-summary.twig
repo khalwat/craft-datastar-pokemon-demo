@@ -1,0 +1,26 @@
+{# @var pokemon \craft\elements\Entry #}
+
+{% import "includes/macros.twig" as macros %}
+
+{% set backgroundColor = macros.colorFromType(pokemon.type1) | spaceless %}
+{% set img = craft.assets.volume('pokemon').title(pokemon.pokemonId).one() %}
+{% if not img %}
+    {% set img = craft.assets.volume('pokemon').title('0').one() %}
+{% endif %}
+<div class="card bg-base-100 w-96 shadow-xl">
+    <div class="{{ macros.pokemonGradientClasses(backgroundColor) }}">
+        <figure class="p-10">
+            <img
+                src="{{ img.url }}"
+                alt="{{ pokemon.pokemonName }}"/>
+        </figure>
+    </div>
+    <div class="card-body flex flex-row {{ macros.cardGradientClasses() }}">
+        <h2 class="card-title flex-1">{{ pokemon.pokemonName }}</h2>
+        <div class="card-actions justify-end inline-block">
+            <a href="{{ pokemon.url }}">
+                <button class="btn btn-primary">Details &rarr;</button>
+            </a>
+        </div>
+    </div>
+</div>

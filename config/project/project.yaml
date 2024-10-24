@@ -1,4 +1,27 @@
-dateModified: 1729653295
+dateModified: 1729743664
+elementSources:
+  craft\elements\Entry:
+    -
+      defaultSort:
+        - postDate
+        - desc
+      disabled: false
+      key: '*'
+      tableAttributes:
+        - 'field:ade48870-fb7a-45ac-b67e-49280f86bbf9' # Pokemon ID
+        - status
+        - section
+        - postDate
+        - expiryDate
+        - authors
+        - link
+      type: native
+    -
+      heading: Channels
+      type: heading
+    -
+      key: 'section:123d7fe5-651b-406b-90ed-a690b7968fcf' # Pokemon
+      type: native
 email:
   fromEmail: info@nystudio107.com
   fromName: 'Spin Up Craft'
@@ -7,16 +30,26 @@ email:
   transportSettings:
     command: '/usr/sbin/sendmail -bs'
   transportType: craft\mail\transportadapters\Sendmail
+fs:
+  default:
+    hasUrls: true
+    name: Default
+    settings:
+      path: '@webroot/assets'
+    type: craft\fs\Local
+    url: '@web/assets'
 meta:
   __names__:
     0d89c679-f6f5-42ae-8341-4bea917c6af7: $CRAFT_SITE_NAME # $CRAFT_SITE_NAME
     1bf43a41-5dfc-4611-97df-f0cea95ca67e: Type1 # Type1
     9e5b80ba-b398-4d20-b97e-c2684f1f5322: Generation # Generation
     16fbb94e-96c0-4975-9b76-3a6df522bd66: 'Pokemon Name' # Pokemon Name
+    0119e14d-183f-402e-94fe-12360885f7e4: 'Pokemon Image' # Pokemon Image
     123d7fe5-651b-406b-90ed-a690b7968fcf: Pokemon # Pokemon
     327e7a50-98c7-489c-9f95-0881d780ab05: Type2 # Type2
     ade48870-fb7a-45ac-b67e-49280f86bbf9: 'Pokemon ID' # Pokemon ID
     e386913e-3a0e-4a68-b0f7-69e83d79eeb6: pokemon # pokemon
+    eb4952ee-1470-485c-89af-ba65c6d897c6: Pokemon # Pokemon
     f255ef6d-0c55-4bdc-9ced-f610bbb3bed6: $CRAFT_SITE_NAME # $CRAFT_SITE_NAME
     f200013a-96be-4073-8522-84e1574099c7: Simple # Simple
     fffe759b-abaa-4b1b-ae46-ab2a190a7de2: 'Pokemon Form' # Pokemon Form
@@ -28,7 +61,7 @@ plugins:
   feed-me:
     edition: standard
     enabled: true
-    schemaVersion: 5.1.0.0
+    schemaVersion: 5.1.1
   spark:
     edition: standard
     enabled: true

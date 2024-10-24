@@ -1,0 +1,32 @@
+{% macro colorFromType(type) %}
+    {% set typeMap = {
+        'Normal': 'gray',
+        'Fire': 'red',
+        'Water': 'blue',
+        'Electric': 'yellow',
+        'Grass': 'green',
+        'Ice': 'cyan',
+        'Fighting': 'amber',
+        'Poison': 'purple',
+        'Ground': 'orange',
+        'Flying': 'sky',
+        'Psychic': 'rose',
+        'Bug': 'emerald',
+        'Rock': 'orange',
+        'Ghost': 'violet',
+        'Dragon': 'violet',
+        'Dark': 'slate',
+        'Steel': 'neutral',
+        'Fairy': 'pink'
+    } %}
+    {% set color = typeMap[type] ?? 'gray' %}
+    {{ color }}
+{% endmacro %}
+
+{% macro pokemonGradientClasses(color) %}
+    {{ "bg-gradient-to-b from-#{color}-100 to-#{color}-600" }}
+{% endmacro %}
+
+{% macro cardGradientClasses() %}
+    {{ "bg-gradient-to-br from-gray-900 to-gray-600" }}
+{% endmacro %}
