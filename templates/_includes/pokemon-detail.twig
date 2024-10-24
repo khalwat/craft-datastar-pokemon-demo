@@ -3,9 +3,12 @@
 
 {# Create a PokemonEntryType and then populated it from values coming from the `pokemon` entry #}
 {# @var pokemonEntry \models\PokemonEntryType #}
+{% set attributesMap = {
+    'entryId': 'id'
+} %}
 {% set pokemonEntry = create('models\\PokemonEntryType') %}
 {% set pokemonEntry = pokemonEntry | reduce(
-    (carry, value, key) => carry | merge({ (key): pokemon[key] ?? null }),
+    (carry, value, key) => carry | merge({ (key): pokemon[attributesMap[key] ?? key] ?? null }),
     {}) %}
 
 {% import "_includes/macros.twig" as macros %}
@@ -53,7 +56,7 @@
                 <input type="text"
                        id="name"
                        class="input input-bordered w-full"
-                       data-model="pokemonName"
+                       data-model="pokemonEntry.pokemonName"
                 >
             </p>
             <div class="card-actions justify-end">
