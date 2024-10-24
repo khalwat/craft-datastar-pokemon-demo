@@ -1,6 +1,9 @@
 {# @var response \craft\web\Response #}
 {# @var store \attributes\stores\PokemonDetail #}
-{% set response = spark.runAction('entries/save-entry', store.pokemonEntry) %}
+{% set response = spark.runAction('entries/save-entry', {
+    entryId: store.entryId,
+    fields: store.pokemonEntry
+}) %}
 {% if response.isSuccessful %}
     <h1 id="title" class="text-5xl font-bold">
         {{ store.pokemonEntry.pokemonName }}

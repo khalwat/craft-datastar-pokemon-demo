@@ -5,12 +5,9 @@
 
 {# Create a PokemonEntryType and then populated it from values coming from the `pokemon` entry #}
 {# @var pokemonEntry \models\PokemonEntryType #}
-{% set attributesMap = {
-    'entryId': 'id'
-} %}
 {% set pokemonEntry = create('models\\PokemonEntryType') %}
 {% set pokemonEntry = pokemonEntry | reduce(
-    (carry, value, key) => carry | merge({ (key): pokemon[attributesMap[key] ?? key] ?? null }),
+    (carry, value, key) => carry | merge({ (key): pokemon[key] ?? null }),
     {}) %}
 
 {% set backgroundColor = macros.colorFromType(pokemon.type1) | spaceless %}
@@ -18,6 +15,7 @@
 <h3 class="m-3 text-3xl text-center"><a href="/">&larr; back &nbsp;</a></h3>
 <div class="card bg-base-100 w-50 shadow-xl rounded-lg overflow-hidden m-2"
      data-store="{{ sparkStoreFromClass('attributes\\stores\\PokemonDetail', {
+         entryId: pokemon.id,
          pokemonEntry: pokemonEntry,
          editing: false
      }) }}"

@@ -6,9 +6,6 @@ use craft\base\Model;
 
 class PokemonEntryType extends Model
 {
-    /** @var ?int The entry ID */
-    public ?int $entryId = 0;
-
     /** @var ?int The Pokedex ID of the Pokemon */
     public ?int $pokemonId = 0;
 
