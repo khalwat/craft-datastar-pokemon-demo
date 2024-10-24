@@ -22,7 +22,7 @@
 
 {# -- Primary content block -- #}
 {% block content %}
-    <div class="flex justify-center my-4">
+    <div class="flex flex-col items-center my-4">
         {{ include("_includes/pokemon-detail.twig", {pokemon: entry}, with_context = false) }}
     </div>
 {% endblock %}

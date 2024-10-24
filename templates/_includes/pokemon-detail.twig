@@ -16,10 +16,10 @@
 
 {% set backgroundColor = macros.colorFromType(pokemon.type1) | spaceless %}
 {% set imgUrl = macros.pokemonImageFromId(pokemon.pokemonId) | spaceless %}
+<h3 class="m-3 text-3xl text-center"><a href="/">&larr; index &nbsp;</a></h3>
 <div class="card bg-base-100 w-50 shadow-xl rounded-lg overflow-hidden m-2"
      data-store="{{ sparkStore(pokemonStore) }}"
 >
-    <h3 class="m-3 text-3xl text-center"><a href="/">&larr; index &nbsp;</a></h3>
     <div class="{{ macros.pokemonGradientClasses(backgroundColor) }}">
         <figure class="p-10">
             <img
