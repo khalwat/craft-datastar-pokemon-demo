@@ -23,7 +23,7 @@
             <div class="carousel carousel-center rounded-box">
                 {% for result in results %}
                     <div class="carousel-item rounded-lg overflow-hidden m-2">
-                        {{ include("includes/pokemon-summary.twig", {pokemon: result}, with_context = false) }}
+                        {{ include("_includes/pokemon-summary.twig", {pokemon: result}, with_context = false) }}
                     </div>
                 {% else %}
                     <div class="carousel-item">

@@ -11,7 +11,9 @@
         <div class="hero bg-base-200">
             <div class="hero-content text-center">
                 <div class="max-w-md">
-                    <h1 class="text-5xl font-bold">{{ entry.title }}</h1>
+                    <h1 id="title" class="text-5xl font-bold">
+                        {{ entry.title }}
+                    </h1>
                 </div>
             </div>
         </div>
@@ -20,6 +22,9 @@
 
 {# -- Primary content block -- #}
 {% block content %}
+    <div class="flex justify-center my-4">
+        {{ include("_includes/pokemon-detail.twig", {pokemon: entry}, with_context = false) }}
+    </div>
 {% endblock %}
 
 {# -- Content that appears after the primary content block -- #}

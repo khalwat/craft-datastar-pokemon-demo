@@ -1,0 +1,76 @@
+{# @var pokemon \craft\elements\Entry #}
+{# @var store \attributes\stores\PokemonEntryType #}
+{% set pokemonEntryProperties = {
+    entryId: pokemon.id,
+    pokemonId: pokemon.pokemonId,
+    pokemonName: pokemon.pokemonName,
+    type1: pokemon.type1,
+    type2: pokemon.type2,
+    generation: pokemon.generation,
+} %}
+
+{% import "_includes/macros.twig" as macros %}
+
+{% set backgroundColor = macros.colorFromType(pokemon.type1) | spaceless %}
+{% set img = craft.assets.volume('pokemon').title(pokemon.pokemonId).one() %}
+{% if not img %}
+    {% set img = craft.assets.volume('pokemon').title('0').one() %}
+{% endif %}
+<div class="card bg-base-100 w-96 shadow-xl rounded-lg overflow-hidden m-2"
+    data-store="{{ sparkStoreFromClass('attributes\\stores\\PokemonEntryType', pokemonEntryProperties) }}"
+>
+    <div class="{{ macros.pokemonGradientClasses(backgroundColor) }}">
+        <figure class="p-10">
+            <img
+                src="{{ img.url }}"
+                alt="{{ pokemon.pokemonName }}"/>
+        </figure>
+    </div>
+    <div class="card-body space-y-2 {{ macros.cardGradientClasses() }}">
+        <div class="space-y-2"
+            data-show="!$editing"
+        >
+            <p>
+                Type: {{ pokemon.type1 }} / {{ pokemon.type2 }}
+            </p>
+            <p>
+                Generation: {{ pokemon.generation }}
+            </p>
+            <div class="card-actions justify-end">
+                <button class="btn btn-primary"
+                    data-on-click="$editing = true"
+                    data-show="!$editing"
+                >
+                    Edit
+                </button>
+            </div>
+        </div>
+        <div class="space-y-2" style="display: none"
+            data-show="$editing"
+        >
+            <p class="space-y-2">
+                <label for="name">Name:</label>
+                <input type="text"
+                    id="name"
+                    class="input input-bordered w-full"
+                    data-model="pokemonName"
+                >
+            </p>
+            <div class="card-actions justify-end">
+                <button class="btn btn-neutral"
+                    data-on-click="$editing = false"
+                    data-show="$editing"
+                >
+                    Cancel
+                </button>
+                <button class="btn btn-primary"
+                    data-on-click="{{ spark('_spark/save-entry.twig', method: 'post') }}"
+                    data-show="$editing"
+                >
+                    Save
+                </button>
+            </div>
+        </div>
+        <div id="alert"></div>
+    </div>
+</div>

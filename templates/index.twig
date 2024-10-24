@@ -1,6 +1,6 @@
 {% extends "vendor/nystudio107/craft-twig-base-templates/templates/_layouts/html-page.twig" %}
 
-{% import "includes/macros.twig" as macros %}
+{% import "_includes/macros.twig" as macros %}
 
 {% block headLinks %}
     <link href="{{ alias('@web/css/daisyui-full.min.css') }}" rel="stylesheet" type="text/css"/>
@@ -46,7 +46,7 @@
                     name="generation"
                     data-model="generation"
                     data-on-change="{{ spark('_spark/faceted-search.twig') }}">
-                    {{ include("includes/generation-options.twig") }}
+                    {{ include("_includes/generation-options.twig") }}
                 </select>
                 {# The type facet #}
                 <label for="type-field" class="">Type</label>
@@ -56,7 +56,7 @@
                     name="type"
                     data-model="type"
                     data-on-change="{{ spark('_spark/faceted-search.twig') }}">
-                    {{ include("includes/type-options.twig") }}
+                    {{ include("_includes/type-options.twig") }}
                 </select>
             </div>
             {# The search results #}

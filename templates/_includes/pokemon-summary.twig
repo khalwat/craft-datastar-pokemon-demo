@@ -1,6 +1,6 @@
 {# @var pokemon \craft\elements\Entry #}
 
-{% import "includes/macros.twig" as macros %}
+{% import "_includes/macros.twig" as macros %}
 
 {% set backgroundColor = macros.colorFromType(pokemon.type1) | spaceless %}
 {% set img = craft.assets.volume('pokemon').title(pokemon.pokemonId).one() %}

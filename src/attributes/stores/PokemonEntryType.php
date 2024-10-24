@@ -7,6 +7,9 @@ use Attribute;
 #[Attribute]
 class PokemonEntryType
 {
+    /** @var int The entry ID */
+    public int $entryId;
+
     /** @var int The Pokedex ID of the Pokemon */
     public int $pokemonId;
 
@@ -24,4 +27,7 @@ class PokemonEntryType
 
     /** @var int The generation of the Pokemon */
     public int $generation;
+
+    /** @var bool Whether we are editing the Pokemon */
+    public bool $editing;
 }

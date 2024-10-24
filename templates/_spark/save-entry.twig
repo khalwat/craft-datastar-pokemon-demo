@@ -1,0 +1,23 @@
+{# @var response \craft\web\Response #}
+{# @var store \attributes\stores\PokemonEntryType #}
+{% set response = spark.runAction('entries/save-entry', {
+    sectionId: 1,
+    title: store.pokemonName
+}) %}
+{% if response.isSuccessful %}
+    <h1 id="title" class="text-5xl font-bold">
+        {{ store.pokemonName }}
+    </h1>
+    <div id="alert" class="alert alert-success"
+        data-show="!$editing"
+    >
+        Saved!
+    </div>
+    {% do store.editing(false) %}
+{% else %}
+    <div id="alert" class="alert alert-error"
+        data-show="$editing"
+    >
+        Error: {{ response.data.errors|first|first }}
+    </div>
+{% endif %}
