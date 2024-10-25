@@ -4,119 +4,123 @@
 {% import "_includes/macros.twig" as macros %}
 
 {# Create a PokemonEntryType and then populated it from values coming from the `pokemon` entry #}
-{# @var pokemonEntry \models\PokemonEntryType #}
-{% set pokemonEntry = create('models\\PokemonEntryType') %}
-{% set pokemonEntry = pokemonEntry | reduce(
+{# @var pokemonEntryData \models\PokemonEntryType #}
+{% set pokemonEntryData = create('models\\PokemonEntryType') %}
+{% set pokemonEntryData = pokemonEntryData | reduce(
     (carry, value, key) => carry | merge({ (key): pokemon[key] ?? null }),
     {}) %}
 
 {% set backgroundColor = macros.colorFromType(pokemon.type1) | spaceless %}
 {% set imgUrl = macros.pokemonImageFromId(pokemon.pokemonId) | spaceless %}
-<h3 class="m-3 text-3xl text-center"><a href="/">&larr; back &nbsp;</a></h3>
-<div class="card bg-base-100 w-96 shadow-xl rounded-lg overflow-hidden m-2"
-     data-store="{{ sparkStoreFromClass('attributes\\stores\\PokemonDetail', {
-         entryId: pokemon.id,
-         pokemonEntry: pokemonEntry,
-         editing: false
-     }) }}"
->
-    <div class="{{ macros.pokemonGradientClasses(backgroundColor) }}">
-        <figure class="p-10">
-            <img
-                src="{{ imgUrl }}"
-                alt="{{ pokemon.pokemonName }}"/>
-        </figure>
-    </div>
-    <div class="card-body space-y-2 {{ macros.cardGradientClasses() }}">
-        {# The display card #}
-        <div class="space-y-2"
-             data-show="!$editing"
-        >
-            <table class="table table-fixed pr-1">
-                <tbody>
-                <tr class="text-lg">
-                    <td class="text-right text-gray-500 w-1/3 pr-0">Name:</td>
-                    <td class="w-2/3" data-text="$pokemonEntry.pokemonName">{{ pokemon.pokemonName }}</td>
-                </tr>
-                <tr class="text-lg">
-                    <td class="text-right text-gray-500 w-1/3 pr-0">Type:</td>
-                    <td class="w-2/3" data-text="$pokemonEntry.type1">{{ pokemon.type1 }}</td>
-                </tr>
-                <tr class="text-lg">
-                    <td class="text-right text-gray-500 w-1/3 pr-0">Generation:</td>
-                    <td class="w-2/3" data-text="$pokemonEntry.generation">{{ pokemon.generation }}</td>
-                </tr>
-                </tbody>
-            </table>
-            <div class="card-actions justify-end">
-                <button class="btn btn-primary"
-                        data-on-click="$editing = true"
-                        data-show="!$editing"
-                >
-                    Edit
-                </button>
-            </div>
+<div class="flex-shrink">
+    <h3 class="m-3 text-3xl text-center"><a href="/">&larr; back &nbsp;</a></h3>
+</div>
+<div class="flex-shrink mr-36">
+    <div class="card bg-base-100 w-96 shadow-xl rounded-lg overflow-hidden m-2"
+         data-store="{{ sparkStoreFromClass('attributes\\stores\\PokemonDetail', {
+             entryId: pokemon.id,
+             pokemonEntry: pokemonEntryData,
+             editing: false
+         }) }}"
+    >
+        <div class="{{ macros.pokemonGradientClasses(backgroundColor) }}">
+            <figure class="p-10">
+                <img
+                    src="{{ imgUrl }}"
+                    alt="{{ pokemon.pokemonName }}"/>
+            </figure>
         </div>
-        {# The editing card #}
-        <div class="space-y-2" style="display: none"
-             data-show="$editing"
-        >
-            <table class="table table-fixed pr-1">
-                <tbody>
-                <tr class="text-lg">
-                    <td class="text-right text-gray-500 w-1/3 pr-0">Name:</td>
-                    <td class="w-2/3">
-                        <input type="text"
-                               id="name"
-                               class="input input-bordered"
-                               data-model="pokemonEntry.pokemonName"
-                        >
-                    </td>
-                </tr>
-                <tr class="text-lg">
-                    <td class="text-right text-gray-500 w-1/3 pr-0">Type:</td>
-                    <td>
-                        <select
-                            id="type"
-                            class="input input-bordered"
-                            data-model="pokemonEntry.type1"
-                        >
-                            {{ include("_includes/options-type.twig") }}
-                        </select>
-                    </td>
-                </tr>
-                <tr class="text-lg">
-                    <td class="text-right text-gray-500 w-1/3 pr-0">Generation:</td>
-                    <td>
-                        <select
-                            id="generation"
-                            class="input input-bordered"
-                            data-model="pokemonEntry.generation"
-                        >
-                            {{ include("_includes/options-generation.twig") }}
-                        </select>
-                    </td>
-                </tr>
-                </tbody>
-                <tfoot>
-                <tr></tr>
-                </tfoot>
-            </table>
-            <div class="card-actions justify-end pt-6">
-                <button class="btn btn-neutral"
-                        data-on-click="$editing = false"
-                        data-show="$editing"
-                >
-                    Cancel
-                </button>
-                <button class="btn btn-primary"
-                        data-on-click="{{ spark('_spark/save-entry.twig', method: 'post') }}"
-                        data-show="$editing"
-                >
-                    Save
-                </button>
+        <div class="card-body space-y-2 {{ macros.cardGradientClasses() }}">
+            {# The display card #}
+            <div class="space-y-2"
+                 data-show="!$editing"
+            >
+                <table class="table table-fixed pr-1">
+                    <tbody>
+                    <tr class="text-lg">
+                        <td class="text-right text-gray-500 w-1/3 pr-0">Name:</td>
+                        <td class="w-2/3" data-text="$pokemonEntry.pokemonName">{{ pokemon.pokemonName }}</td>
+                    </tr>
+                    <tr class="text-lg">
+                        <td class="text-right text-gray-500 w-1/3 pr-0">Type:</td>
+                        <td class="w-2/3" data-text="$pokemonEntry.type1">{{ pokemon.type1 }}</td>
+                    </tr>
+                    <tr class="text-lg">
+                        <td class="text-right text-gray-500 w-1/3 pr-0">Generation:</td>
+                        <td class="w-2/3" data-text="$pokemonEntry.generation">{{ pokemon.generation }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="card-actions justify-end">
+                    <button class="btn btn-primary"
+                            data-on-click="$editing = true"
+                            data-show="!$editing"
+                    >
+                        Edit
+                    </button>
+                </div>
             </div>
+            {# The editing card #}
+            <div class="space-y-2" style="display: none"
+                 data-show="$editing"
+            >
+                <table class="table table-fixed pr-1">
+                    <tbody>
+                    <tr class="text-lg">
+                        <td class="text-right text-gray-500 w-1/3 pr-0">Name:</td>
+                        <td class="w-2/3">
+                            <input type="text"
+                                   id="name"
+                                   class="input input-bordered"
+                                   data-model="pokemonEntry.pokemonName"
+                            >
+                        </td>
+                    </tr>
+                    <tr class="text-lg">
+                        <td class="text-right text-gray-500 w-1/3 pr-0">Type:</td>
+                        <td>
+                            <select
+                                id="type"
+                                class="input input-bordered"
+                                data-model="pokemonEntry.type1"
+                            >
+                                {{ include("_includes/options-type.twig") }}
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="text-lg">
+                        <td class="text-right text-gray-500 w-1/3 pr-0">Generation:</td>
+                        <td>
+                            <select
+                                id="generation"
+                                class="input input-bordered"
+                                data-model="pokemonEntry.generation"
+                            >
+                                {{ include("_includes/options-generation.twig") }}
+                            </select>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr></tr>
+                    </tfoot>
+                </table>
+                <div class="card-actions justify-end pt-6">
+                    <button class="btn btn-neutral"
+                            data-on-click="$editing = false"
+                            data-show="$editing"
+                    >
+                        Cancel
+                    </button>
+                    <button class="btn btn-primary"
+                            data-on-click="{{ spark('_spark/save-entry.twig', method: 'post') }}"
+                            data-show="$editing"
+                    >
+                        Save
+                    </button>
+                </div>
+            </div>
+            <div id="alert"></div>
         </div>
-        <div id="alert"></div>
     </div>
 </div>
