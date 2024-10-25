@@ -17,6 +17,9 @@ class FacetedSearch extends StoreModel
     /** @var string The type of the Pokemon */
     public string $type = 'all';
 
-    /** @var int The number of items returned by the search */
-    public int $resultsCount = 0;
+    /** @var int The number of searches that have been done */
+    public int $searchCount = 0;
+
+    /** @var int The number of characters that have been typed */
+    public int $characterCount = 0;
 }
