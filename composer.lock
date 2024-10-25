@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a68efaffbc5955fd8e823026fe24ae45",
+    "content-hash": "56ca6a7a1f271f3401cce88a5051a01d",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -3954,16 +3954,16 @@
         },
         {
             "name": "putyourlightson/craft-spark",
-            "version": "0.0.11",
+            "version": "0.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/putyourlightson/craft-spark.git",
-                "reference": "6da8e363243541ec8de4eb682a5ea5f87b2b09c0"
+                "reference": "45042ccb6a9c3f20b42b3210e913b91d56b0d11f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-spark/zipball/6da8e363243541ec8de4eb682a5ea5f87b2b09c0",
-                "reference": "6da8e363243541ec8de4eb682a5ea5f87b2b09c0",
+                "url": "https://api.github.com/repos/putyourlightson/craft-spark/zipball/45042ccb6a9c3f20b42b3210e913b91d56b0d11f",
+                "reference": "45042ccb6a9c3f20b42b3210e913b91d56b0d11f",
                 "shasum": ""
             },
             "require": {
@@ -3998,7 +3998,7 @@
             "description": "A real-time, template-driven hypermedia framework for Craft.",
             "support": {
                 "issues": "https://github.com/putyourlightson/craft-spark/issues",
-                "source": "https://github.com/putyourlightson/craft-spark/tree/0.0.11"
+                "source": "https://github.com/putyourlightson/craft-spark/tree/0.0.12"
             },
             "funding": [
                 {
@@ -4006,7 +4006,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-24T15:37:09+00:00"
+            "time": "2024-10-25T10:18:41+00:00"
         },
         {
             "name": "putyourlightson/datastar-php",
