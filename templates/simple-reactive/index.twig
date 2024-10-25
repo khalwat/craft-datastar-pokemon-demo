@@ -20,7 +20,7 @@
 
 {# -- Primary content block -- #}
 {% block content %}
-    <section data-store="{ input: ''}">
+    <section data-store="{ input: '', characterCount: 0}">
         <div class="text-center">
             {#
             <button
@@ -32,6 +32,7 @@
             <input
                 class="input input-bordered w-full max-w-xs"
                 data-model="input"
+                data-on-keydown="$characterCount = $characterCount + 1;"
                 placeholder=""
                 type="text"
             />
@@ -45,9 +46,7 @@
 
 {# -- Content that appears after the primary content block -- #}
 {% block postContent %}
+    <section class="text-center">
+        <p>Characters types: <span data-text="$characterCount">0</span></p>
+    </section>
 {% endblock %}
-
-{# -- Any <script></script> tags that should be included before </body> -- #}
-{% block bodyScripts %}
-    {{ parent() }}
-{% endblock bodyScripts %}

@@ -19,7 +19,4 @@ class FacetedSearch extends StoreModel
 
     /** @var int The number of searches that have been done */
     public int $searchCount = 0;
-
-    /** @var int The number of characters that have been typed */
-    public int $characterCount = 0;
 }
