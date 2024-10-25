@@ -2,26 +2,29 @@
 
 {# Set up the query to get the Pokemon! #}
 {% set results = [] %}
-{# If the search string isn't empty, execute the query #}
+{% set query = craft.entries()
+    .section(['pokemon'])
+    .orderBy('score') %}
+{# Handle the generation facet #}
+{% if store.generation != 0 %}
+    {% do query.generation(store.generation) %}
+{% endif %}
+{# Handle the generation facet #}
+{% if store.type != 'all' %}
+    {% do query.type1(store.type) %}
+{% endif %}
+{# Handle the search string #}
 {% if store.search is not empty %}
-    {% set query = craft.entries()
-        .section(['pokemon'])
-        .search(store.search)
-        .orderBy('score') %}
-    {# Handle the generation facet #}
-    {% if store.generation > 0 %}
-        {% do query.generation(store.generation) %}
-    {% endif %}
-    {# Handle the generation facet #}
-    {% if store.type != 'all' %}
-        {% do query.type1(store.type) %}
-    {% endif %}
+    {% do query.search(store.search) %}
     {# Execute the query to fetch the results #}
     {% set results = query.all() %}
+    {# Increment the number of searches we've done #}
+    {% do store.searchCount(store.searchCount + 1) %}
 {% endif %}
 
+{# The search results fragment #}
 {% fragment %}
-    <div id="search-results">
+    <section id="search-results" class="text-center align-baseline">
         <div class="w-full overflow-x-scroll">
             <div class="carousel carousel-center rounded-box">
                 {% for result in results %}
@@ -35,7 +38,12 @@
                 {% endfor %}
             </div>
         </div>
-    </div>
+    </section>
 {% endfragment %}
 
-{% do store.resultsCount(results | length) %}
+{# The result count fragment #}
+{% fragment %}
+    <section id="results-count" class="text-center align-baseline">
+        <p>Total Pokemon: <span>{{ results | length }}</span></p>
+    </section>
+{% endfragment %}

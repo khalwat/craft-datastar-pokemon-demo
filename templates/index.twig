@@ -9,74 +9,67 @@
 
 {# -- Content that appears before the primary content block -- #}
 {% block preContent %}
-    {% set backgroundColor = macros.colorFromType('Grass') | spaceless %}
-
-    <section>
-        <div class="hero bg-base-200">
-            <div class="hero-content text-center">
-                <div class="max-w-md">
-                    <h1 class="text-5xl font-bold">Spark / Datastar Pokedex</h1>
-                </div>
-            </div>
-        </div>
-    </section>
+    {{ include("_includes/site-header.twig", { pageTitle: "Pokedex" }, with_context = false) }}
 {% endblock %}
 
 {# -- Primary content block -- #}
 {% block content %}
-    <section data-store="{{ sparkStoreFromClass('attributes\\stores\\FacetedSearch') }}">
-        <div class="text-center align-baseline">
-            {# The search field #}
-            <input
-                id="search-field"
-                class="input input-bordered w-full max-w-xs m-3"
-                data-model="search"
-                data-on-input.debounce_500ms="{{ spark('_spark/faceted-search.twig') }}"
-                placeholder="Search..."
-                type="text"
-            />
-            <div class="inline" style="display: none"
-                 data-show="$search != ''"
-            ></div>
+    <section class="text-center align-baseline"
+             data-store="{{ sparkStoreFromClass('attributes\\stores\\FacetedSearch') }}">
+        {# The search field #}
+        <input
+            id="search-field"
+            class="input input-bordered w-full max-w-xs m-3"
+            data-model="search"
+            data-on-input.debounce_500ms="{{ spark('_spark/faceted-search.twig') }}"
+            data-on-keydown="$characterCount = $characterCount + 1;"
+            placeholder="Search..."
+            type="text"
+        />
+        <div class="inline" style="display: none"
+             data-show="$search != ''"
+        ></div>
 
-            {# The generation facet #}
-            <div class="inline m-3">
-                <label for="generation-field" class="mr-2">Generation</label>
-                <select
-                    id="generation-field"
-                    class="select select-bordered max-w-xs"
-                    name="generation"
-                    data-model="generation"
-                    data-on-change="{{ spark('_spark/faceted-search.twig') }}">
-                    {{ include("_includes/generation-options.twig") }}
-                </select>
-            </div>
-            {# The type facet #}
-            <div class="inline m-3">
-                <label for="type-field" class="mr-2">Type</label>
-                <select
-                    id="type-field"
-                    class="select select-bordered max-w-xs"
-                    name="type"
-                    data-model="type"
-                    data-on-change="{{ spark('_spark/faceted-search.twig') }}">
-                    {{ include("_includes/type-options.twig") }}
-                </select>
-            </div>
-            {# The search results #}
-            <div id="search-results">
-            </div>
-            {# The number of displayed results #}
-            <p>Total Pokemon: <span data-text="$resultsCount">0</span></p>
+        {# The generation facet #}
+        <div class="inline m-3">
+            <label for="generation-field" class="mr-2">Generation</label>
+            <select
+                id="generation-field"
+                class="select select-bordered max-w-xs"
+                name="generation"
+                data-model="generation"
+                data-on-change="{{ spark('_spark/faceted-search.twig') }}">
+                {{ include("_includes/generation-options.twig") }}
+            </select>
         </div>
+        {# The type facet #}
+        <div class="inline m-3">
+            <label for="type-field" class="mr-2">Type</label>
+            <select
+                id="type-field"
+                class="select select-bordered max-w-xs"
+                name="type"
+                data-model="type"
+                data-on-change="{{ spark('_spark/faceted-search.twig') }}">
+                {{ include("_includes/type-options.twig") }}
+            </select>
+        </div>
+    </section>
+    {# The search results #}
+    <section id="search-results" data-on-load="{{ spark('_spark/faceted-search.twig') }}">
     </section>
 {% endblock %}
 
 {# -- Content that appears after the primary content block -- #}
 {% block postContent %}
+    {# The results count #}
+    <section id="results-count">
+    </section>
+    {# Display some stats #}
+    <section class="text-center align-baseline">
+        <p>
+            Searches: <span data-text="$searchCount"></span>
+            Characters: <span data-text="$characterCount"></span>
+        </p>
+    </section>
 {% endblock %}
-
-{# -- Any <script></script> tags that should be included before </body> -- #}
-{% block bodyScripts %}
-    {{ parent() }}
-{% endblock bodyScripts %}

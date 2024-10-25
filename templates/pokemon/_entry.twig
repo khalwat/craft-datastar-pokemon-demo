@@ -7,24 +7,14 @@
 
 {# -- Content that appears before the primary content block -- #}
 {% block preContent %}
-    <section>
-        <div class="hero bg-base-200">
-            <div class="hero-content text-center">
-                <div class="max-w-md">
-                    <h1 id="title" class="text-5xl font-bold">
-                        {{ entry.pokemonName }}
-                    </h1>
-                </div>
-            </div>
-        </div>
-    </section>
+    {{ include("_includes/site-header.twig", { pageTitle: entry.pokemonName}, with_context = false) }}
 {% endblock %}
 
 {# -- Primary content block -- #}
 {% block content %}
-    <div class="flex flex-col items-center my-4">
-        {{ include("_includes/pokemon-detail.twig", {pokemon: entry}, with_context = false) }}
-    </div>
+    <section class="flex flex-col items-center my-4">
+        {{ include("_includes/pokemon-detail.twig", { pokemon: entry }, with_context = false) }}
+    </section>
 {% endblock %}
 
 {# -- Content that appears after the primary content block -- #}
