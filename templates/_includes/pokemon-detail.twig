@@ -1,5 +1,4 @@
 {# @var pokemon \craft\elements\Entry #}
-{# @var store \attributes\stores\PokemonDetail #}
 
 {% import "_includes/macros.twig" as macros %}
 
@@ -19,8 +18,7 @@
     <div class="card bg-base-100 w-96 shadow-xl rounded-lg overflow-hidden m-2"
          data-store="{{ sparkStoreFromClass('attributes\\stores\\PokemonDetail', {
              entryId: pokemon.id,
-             pokemonEntry: pokemonEntryData,
-             editing: false
+             pokemonEntry: pokemonEntryData
          }) }}"
     >
         <div class="{{ macros.pokemonGradientClasses(backgroundColor) }}">
