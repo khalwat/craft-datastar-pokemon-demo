@@ -30,7 +30,7 @@
                     alt="{{ pokemon.pokemonName }}"/>
             </figure>
         </div>
-        <div class="card-body space-y-2 {{ macros.cardGradientClasses() }}">
+        <div class="card-body {{ macros.cardGradientClasses() }}">
             {# The display card #}
             <div class="space-y-2"
                  data-show="!$editing"
@@ -71,7 +71,7 @@
                         <td class="w-2/3">
                             <input type="text"
                                    id="name"
-                                   class="input input-bordered"
+                                   class="input input-bordered w-full"
                                    data-model="pokemonEntry.pokemonName"
                             >
                         </td>
@@ -81,7 +81,7 @@
                         <td>
                             <select
                                 id="type"
-                                class="input input-bordered"
+                                class="select select-bordered w-full text-base"
                                 data-model="pokemonEntry.type1"
                             >
                                 {{ include("_includes/options-type.twig") }}
@@ -93,7 +93,7 @@
                         <td>
                             <select
                                 id="generation"
-                                class="input input-bordered"
+                                class="select select-bordered w-full text-base"
                                 data-model="pokemonEntry.generation"
                             >
                                 {{ include("_includes/options-generation.twig") }}
