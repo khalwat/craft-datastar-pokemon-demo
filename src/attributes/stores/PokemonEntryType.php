@@ -1,10 +1,11 @@
 <?php
 
-namespace models;
+namespace attributes\stores;
 
-use craft\base\Model;
+use Attribute;
 
-class PokemonEntryType extends Model
+#[Attribute]
+class PokemonEntryType
 {
     /** @var ?int The Pokedex ID of the Pokemon */
     public ?int $pokemonId = 0;

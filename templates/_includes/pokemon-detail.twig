@@ -2,13 +2,6 @@
 
 {% import "_includes/macros.twig" as macros %}
 
-{# Create a PokemonEntryType and then populated it from values coming from the `pokemon` entry #}
-{# @var pokemonEntryData \models\PokemonEntryType #}
-{% set pokemonEntryData = create('models\\PokemonEntryType') %}
-{% set pokemonEntryData = pokemonEntryData | reduce(
-    (carry, value, key) => carry | merge({ (key): pokemon[key] ?? null }),
-    {}) %}
-
 {% set backgroundColor = macros.colorFromType(pokemon.type1) | spaceless %}
 {% set imgUrl = macros.pokemonImageFromId(pokemon.pokemonId) | spaceless %}
 <div class="flex-shrink">
@@ -18,7 +11,7 @@
     <div class="card bg-base-100 w-96 shadow-xl rounded-lg overflow-hidden m-2"
          data-store="{{ sparkStoreFromClass('attributes\\stores\\PokemonDetail', {
              entryId: pokemon.id,
-             pokemonEntry: pokemonEntryData
+             pokemonEntry: pokemon.getFieldValues()
          }) }}"
     >
         <div class="{{ macros.pokemonGradientClasses(backgroundColor) }}">
