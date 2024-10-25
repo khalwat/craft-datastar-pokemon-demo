@@ -39,7 +39,8 @@
                 name="generation"
                 data-model="generation"
                 data-on-change="{{ spark('_spark/faceted-search.twig') }}">
-                {{ include("_includes/generation-options.twig") }}
+                <option value="0">All</option>
+                {{ include("_includes/options-generation.twig") }}
             </select>
         </div>
         {# The type facet #}
@@ -51,7 +52,8 @@
                 name="type"
                 data-model="type"
                 data-on-change="{{ spark('_spark/faceted-search.twig') }}">
-                {{ include("_includes/type-options.twig") }}
+                <option value="all">All</option>
+                {{ include("_includes/options-type.twig") }}
             </select>
         </div>
     </section>
