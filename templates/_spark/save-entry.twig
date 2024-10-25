@@ -18,6 +18,6 @@
     <div id="alert" class="alert alert-error"
          data-show="$editing"
     >
-        Error: {{ response.data.errors|first|first }}
+        {{ response.data.errors|first|first }}
     </div>
 {% endif %}
