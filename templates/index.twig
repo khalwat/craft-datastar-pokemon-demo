@@ -2,6 +2,12 @@
 
 {% import "_includes/macros.twig" as macros %}
 
+{# Query all the pokemon #}
+{% set results = craft.entries()
+    .section(['pokemon'])
+    .orderBy('score')
+    .all() %}
+
 {% block headLinks %}
     <link href="{{ alias('@web/css/daisyui-full.min.css') }}" rel="stylesheet" type="text/css"/>
     <script src="{{ alias('@web/js/tailwindcss.min.js') }}"></script>
@@ -14,61 +20,22 @@
 
 {# -- Primary content block -- #}
 {% block content %}
-    <section class="text-center align-baseline"
-             data-store="{{ sparkStoreFromClass('attributes\\stores\\FacetedSearch') }}">
-        {# The search field #}
-        <input
-            id="search-field"
-            class="input input-bordered w-full max-w-xs m-3"
-            data-model="search"
-            data-on-input.debounce_500ms="{{ spark('_spark/faceted-search.twig') }}"
-            placeholder="Search..."
-            type="text"
-        />
-        <div class="inline" style="display: none"
-             data-show="$search != ''"
-        ></div>
-        {# The generation facet #}
-        <div class="inline m-3">
-            <label for="generation-field" class="mr-2">Generation</label>
-            <select
-                id="generation-field"
-                class="select select-bordered max-w-xs"
-                name="generation"
-                data-model="generation"
-                data-on-change="{{ spark('_spark/faceted-search.twig') }}">
-                <option value="0">All</option>
-                {{ include("_includes/options-generation.twig") }}
-            </select>
-        </div>
-        {# The type facet #}
-        <div class="inline m-3">
-            <label for="type-field" class="mr-2">Type</label>
-            <select
-                id="type-field"
-                class="select select-bordered max-w-xs"
-                name="type"
-                data-model="type"
-                data-on-change="{{ spark('_spark/faceted-search.twig') }}">
-                <option value="all">All</option>
-                {{ include("_includes/options-type.twig") }}
-            </select>
-        </div>
-    </section>
-    {# The search results #}
-    <section id="search-results" data-on-load="{{ spark('_spark/faceted-search.twig') }}">
-    </section>
+    <div data-store="{{ sparkStoreFromClass('attributes\\stores\\FacetedSearch') }}">
+        {# The faceted search UI #}
+        {{ include("_includes/faceted-search-ui.twig", {}, with_context = false) }}
+        {# The search results #}
+        {{ include("_includes/search-results.twig", {results}, with_context = false) }}
+    </div>
 {% endblock %}
 
 {# -- Content that appears after the primary content block -- #}
 {% block postContent %}
     {# The results count #}
-    <section id="results-count">
-    </section>
+    {{ include("_includes/results-count.twig", {results}, with_context = false) }}
     {# Display some stats #}
     <section class="text-center align-baseline">
         <p>
-            Searches: <span data-text="$searchCount"></span>
+            Searches: <span data-text="$searchCount">0</span>
         </p>
     </section>
 {% endblock %}

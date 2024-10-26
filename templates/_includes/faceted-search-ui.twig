@@ -1,0 +1,40 @@
+<section class="text-center align-baseline">
+    {# The search field #}
+    <input
+        id="search-field"
+        class="input input-bordered w-full max-w-xs m-3"
+        data-model="search"
+        data-on-input.debounce_500ms="{{ spark('_spark/faceted-search.twig') }}"
+        placeholder="Search..."
+        type="text"
+    />
+    <div class="inline" style="display: none"
+         data-show="$search != ''"
+    ></div>
+    {# The generation facet #}
+    <div class="inline m-3">
+        <label for="generation-field" class="mr-2">Generation</label>
+        <select
+            id="generation-field"
+            class="select select-bordered max-w-xs"
+            name="generation"
+            data-model="generation"
+            data-on-change="{{ spark('_spark/faceted-search.twig') }}">
+            <option value="0">All</option>
+            {{ include("_includes/options-generation.twig") }}
+        </select>
+    </div>
+    {# The type facet #}
+    <div class="inline m-3">
+        <label for="type-field" class="mr-2">Type</label>
+        <select
+            id="type-field"
+            class="select select-bordered max-w-xs"
+            name="type"
+            data-model="type"
+            data-on-change="{{ spark('_spark/faceted-search.twig') }}">
+            <option value="all">All</option>
+            {{ include("_includes/options-type.twig") }}
+        </select>
+    </div>
+</section>

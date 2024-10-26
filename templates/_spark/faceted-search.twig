@@ -16,34 +16,19 @@
 {# Handle the search string #}
 {% if store.search is not empty %}
     {% do query.search(store.search) %}
-    {# Execute the query to fetch the results #}
-    {% set results = query.all() %}
-    {# Increment the number of searches we've done #}
-    {% do store.searchCount(store.searchCount + 1) %}
 {% endif %}
+{# Execute the query to fetch the results #}
+{% set results = query.all() %}
 
 {# The search results fragment #}
 {% fragment %}
-    <section id="search-results" class="text-center align-baseline">
-        <div class="w-full overflow-x-scroll">
-            <div class="carousel carousel-center rounded-box">
-                {% for result in results %}
-                    <div class="carousel-item rounded-lg overflow-hidden m-2">
-                        {{ include("_includes/pokemon-summary.twig", {pokemon: result}, with_context = false) }}
-                    </div>
-                {% else %}
-                    <div class="carousel-item">
-                        <p>No results</p>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
+    {{ include("_includes/search-results.twig", {results}, with_context = false) }}
 {% endfragment %}
 
 {# The result count fragment #}
 {% fragment %}
-    <section id="results-count" class="text-center align-baseline">
-        <p>Total Pokemon: <span>{{ results | length }}</span></p>
-    </section>
+    {{ include("_includes/results-count.twig", {results}, with_context = false) }}
 {% endfragment %}
+
+{# Increment the number of searches we've done #}
+{% do store.searchCount(store.searchCount + 1) %}
