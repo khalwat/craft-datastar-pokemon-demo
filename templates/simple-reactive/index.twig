@@ -7,27 +7,13 @@
 
 {# -- Content that appears before the primary content block -- #}
 {% block preContent %}
-    <section>
-        <div class="hero bg-base-200">
-            <div class="hero-content text-center">
-                <div class="max-w-md">
-                    <h1 class="text-5xl font-bold">Simple reactive demo</h1>
-                </div>
-            </div>
-        </div>
-    </section>
+    {{ include("simple-reactive/_includes/site-header.twig", with_context = false) }}
 {% endblock %}
 
 {# -- Primary content block -- #}
 {% block content %}
-    <section data-store="{ input: '', characterCount: 0}">
+    <section data-store="{ input: '' }">
         <div class="text-center">
-            {#
-            <button
-                class="btn btn-primary m-3"
-                data-on-click="$input='woof'; alert('Set it to woof!');">Set it to 'woof'!
-            </button>
-            #}
             <h3 class="text-3xl p-3">Type something:</h3>
             <input
                 class="input input-bordered w-full max-w-xs"
@@ -38,15 +24,19 @@
             />
             <p class="text-3xl p-3">
                 <span data-text="$input"></span>
-                <span data-show="$input == 'Toronto'">🇨🇦</span>
+                <span data-show="$input == 'Toronto'" style="display: none;">🇨🇦</span>
             </p>
+            <button
+                class="btn btn-primary m-3"
+                data-on-click="$input='woof'; alert('Set it to woof!');">Set it to 'woof'!
+            </button>
         </div>
     </section>
 {% endblock %}
 
 {# -- Content that appears after the primary content block -- #}
 {% block postContent %}
-    <section class="text-center">
-        <p>Characters types: <span data-text="$characterCount">0</span></p>
+    <section class="text-center" data-store="{ characterCount: 0 }">
+        <p>Characters typed: <span data-text="$characterCount">0</span></p>
     </section>
 {% endblock %}
