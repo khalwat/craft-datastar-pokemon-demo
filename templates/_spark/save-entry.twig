@@ -5,19 +5,25 @@
     fields: store.pokemonEntry
 }) %}
 {% if response.isSuccessful %}
-    <h1 id="title" class="text-5xl font-bold">
-        {{ store.pokemonEntry.pokemonName }}
-    </h1>
-    <div id="alert" class="alert alert-success"
-         data-show="!$editing"
-    >
-        Saved!
-    </div>
+    {% fragment %}
+        <h1 id="title" class="text-5xl font-bold">
+            {{ store.pokemonEntry.pokemonName }}
+        </h1>
+    {% endfragment %}
+    {% fragment %}
+        <div id="alert" class="alert alert-success"
+             data-show="!$editing"
+        >
+            Saved!
+        </div>
+    {% endfragment %}
     {% do store.editing(false) %}
 {% else %}
-    <div id="alert" class="alert alert-error"
-         data-show="$editing"
-    >
-        {{ response.data.errors|first|first }}
-    </div>
+    {% fragment %}
+        <div id="alert" class="alert alert-error"
+             data-show="$editing"
+        >
+            {{ response.data.errors|first|first }}
+        </div>
+    {% endfragment %}
 {% endif %}
