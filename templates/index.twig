@@ -21,10 +21,12 @@
 {# -- Primary content block -- #}
 {% block content %}
     <div data-store="{{ sparkStoreFromClass('attributes\\stores\\FacetedSearch') }}">
-        {# The faceted search UI #}
-        {{ include("_includes/faceted-search-ui.twig", {}, with_context = false) }}
-        {# The search results #}
-        {{ include("_includes/search-results.twig", {results}, with_context = false) }}
+        {% cache %}
+            {# The faceted search UI #}
+            {{ include("_includes/faceted-search-ui.twig", {}, with_context = false) }}
+            {# The search results #}
+            {{ include("_includes/search-results.twig", {results}, with_context = false) }}
+        {% endcache %}
     </div>
 {% endblock %}
 
