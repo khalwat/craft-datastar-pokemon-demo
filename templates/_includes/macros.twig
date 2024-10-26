@@ -32,9 +32,8 @@
 {% endmacro %}
 
 {% macro pokemonImageFromId(pokemonId) %}
-    {% set img = craft.assets.volume('pokemon').title(pokemonId).one() %}
-    {% if not img %}
-        {% set img = craft.assets.volume('pokemon').title('0').one() %}
+    {% if pokemonId > 721 %}
+        {% set pokemonId = 0 %}
     {% endif %}
-    {{ img.url }}
+    {{ alias("@web/assets/pokemon/#{pokemonId}.png") }}
 {% endmacro %}
