@@ -9,6 +9,22 @@ This allows you to leverage the Craft CMS & Twig APIs that you're used to in ord
 
 Below is the full Read Me for "Spin Up Craft", which this demo project is based on.
 
+### About the demo
+
+![Screenshot](./resources/spark-datastar-pokemon.png)
+
+The demo project uses a Craft CMS database of Pokemon that you can search through via a reactive faceted search.
+
+You can also see a detail page for each Pokemon, with the ability to edit the Pokemon data and save the changes to the
+Craft CMS database (assuming you are logged in).
+
+### Acknowledgements
+
+* This project was created using [Spin Up Craft](https://github.com/nystudio107/spin-up-craft)
+* Pokemon database is from [PokemonData](https://github.com/lgreski/pokemonData)
+* Pokemon images are
+  from [The Complete Pokemon Images Data Set](https://www.kaggle.com/datasets/arenagrenade/the-complete-pokemon-images-data-set)
+
 # Spin Up Craft 5.0 Beta
 
 If you want to give the new Craft CMS 5.0 Beta without having to do any setup, this project is for you!
@@ -18,8 +34,6 @@ few quick commands.
 
 Whether in-browser or on your local computer, you'll have a fully functional Craft CMS instance with an editor, content,
 Twig templates, and a database.
-
-This project was created using [Spin Up Craft](https://github.com/nystudio107/spin-up-craft)
 
 ## Spin Up Craft 5.0 Beta in a browser via Github Codespaces
 
