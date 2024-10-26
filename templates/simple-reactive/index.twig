@@ -29,7 +29,7 @@
             </p>
             <button
                 class="btn btn-primary m-3"
-                data-on-click="$input='woof'; alert('Set it to woof!');">Set it to 'woof'!
+                data-on-click="$input = 'woof'; alert('Set it to woof!');">Set it to 'woof'!
             </button>
         </div>
     </section>
@@ -38,6 +38,9 @@
 {# -- Content that appears after the primary content block -- #}
 {% block postContent %}
     <section class="text-center" data-store="{ characterCount: 0 }">
-        <p>Characters typed: <span data-text="$characterCount">0</span></p>
+        <p>
+            Characters typed:
+            <span data-text="$characterCount">0</span>
+        </p>
     </section>
 {% endblock %}
