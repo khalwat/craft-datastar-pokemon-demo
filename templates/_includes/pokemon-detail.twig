@@ -11,7 +11,8 @@
     <div class="card bg-base-100 w-96 shadow-xl rounded-lg overflow-hidden m-2"
          data-store="{{ sparkStoreFromClass('attributes\\stores\\PokemonDetail', {
              entryId: pokemon.id,
-             pokemonEntry: pokemon.getFieldValues()
+             pokemonEntry: pokemon.getFieldValues(),
+             editing: false
          }) }}"
     >
         <div class="{{ macros.pokemonGradientClasses(backgroundColor) }}">
@@ -22,7 +23,6 @@
             </figure>
         </div>
         <div class="card-body {{ macros.cardGradientClasses() }}">
-            {{ pokemon.pokemonId }}
             {# The display card #}
             <div class="space-y-2"
                  data-show="!$editing"

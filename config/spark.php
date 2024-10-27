@@ -19,7 +19,7 @@
 
 return [
     // Whether to register the Datastar script on the front-end.
-    'registerScript' => true,
+    'registerScript' => false,
 
     // The name of the store variable that will be injected into Spark templates.
     'storeVariableName' => 'store',

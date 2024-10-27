@@ -8,11 +8,6 @@
     .orderBy('score')
     .all() %}
 
-{% block headLinks %}
-    <link href="{{ alias('@web/css/daisyui-full.min.css') }}" rel="stylesheet" type="text/css"/>
-    <script src="{{ alias('@web/js/tailwindcss.min.js') }}"></script>
-{% endblock headLinks %}
-
 {# -- Content that appears before the primary content block -- #}
 {% block preContent %}
     {{ include("_includes/site-header.twig", { pageTitle: "Pokedex" }, with_context = false) }}
@@ -38,4 +33,5 @@
             Searches: <span data-text="$searchCount">0</span>
         </p>
     </section>
+    <datastar-inspector></datastar-inspector>
 {% endblock %}

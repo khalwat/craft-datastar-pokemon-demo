@@ -1,10 +1,5 @@
 {% extends "layout.twig" %}
 
-{% block headLinks %}
-    <link href="{{ alias('@web/css/daisyui-full.min.css') }}" rel="stylesheet" type="text/css"/>
-    <script src="{{ alias('@web/js/tailwindcss.min.js') }}"></script>
-{% endblock headLinks %}
-
 {# -- Content that appears before the primary content block -- #}
 {% block preContent %}
     {{ include("_includes/site-header.twig", { pageTitle: entry.pokemonName}, with_context = false) }}
@@ -19,9 +14,5 @@
 
 {# -- Content that appears after the primary content block -- #}
 {% block postContent %}
+    <datastar-inspector></datastar-inspector>
 {% endblock %}
-
-{# -- Any <script></script> tags that should be included before </body> -- #}
-{% block bodyScripts %}
-    {{ parent() }}
-{% endblock bodyScripts %}
