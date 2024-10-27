@@ -21,9 +21,11 @@ Craft CMS database (assuming you are logged in).
 ### Acknowledgements
 
 * This project was created using [Spin Up Craft](https://github.com/nystudio107/spin-up-craft)
+* The UI components are courtesy of [daisyUI](https://daisyui.com/) & [Tailwind CSS](https://tailwindcss.com/)
 * Pokemon database is from [PokemonData](https://github.com/lgreski/pokemonData)
 * Pokemon images are
   from [The Complete Pokemon Images Data Set](https://www.kaggle.com/datasets/arenagrenade/the-complete-pokemon-images-data-set)
+* Ben Croker for making [Spark](https://putyourlightson.com/plugins/spark) for Craft CMS and helping with the demo
 
 # Spin Up Craft 5.0 Beta
 
