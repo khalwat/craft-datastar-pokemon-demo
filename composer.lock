@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dfb0d414c50f364ae6242d3a24addd30",
+    "content-hash": "c4549aa67ccf513e127c79fa20183433",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -3954,22 +3954,22 @@
         },
         {
             "name": "putyourlightson/craft-spark",
-            "version": "0.0.13",
+            "version": "1.0.0-alpha.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/putyourlightson/craft-spark.git",
-                "reference": "4e27a1cb0faa0db6fad8a3125ec1de9476779efd"
+                "reference": "f4ef965e8d66a72112625b6a1c67f1bf7bd8e5e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-spark/zipball/4e27a1cb0faa0db6fad8a3125ec1de9476779efd",
-                "reference": "4e27a1cb0faa0db6fad8a3125ec1de9476779efd",
+                "url": "https://api.github.com/repos/putyourlightson/craft-spark/zipball/f4ef965e8d66a72112625b6a1c67f1bf7bd8e5e5",
+                "reference": "f4ef965e8d66a72112625b6a1c67f1bf7bd8e5e5",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^5.4.0",
+                "craftcms/cms": "^5.4",
                 "php": ">=8.2",
-                "putyourlightson/datastar-php": "0.0.4"
+                "putyourlightson/datastar-php": "1.0.0"
             },
             "require-dev": {
                 "craftcms/ecs": "dev-main",
@@ -3998,7 +3998,7 @@
             "description": "A real-time, template-driven hypermedia framework for Craft.",
             "support": {
                 "issues": "https://github.com/putyourlightson/craft-spark/issues",
-                "source": "https://github.com/putyourlightson/craft-spark/tree/0.0.13"
+                "source": "https://github.com/putyourlightson/craft-spark/tree/1.0.0-alpha.1"
             },
             "funding": [
                 {
@@ -4006,20 +4006,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-25T19:10:08+00:00"
+            "time": "2024-10-28T17:07:00+00:00"
         },
         {
             "name": "putyourlightson/datastar-php",
-            "version": "0.0.4",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/putyourlightson/datastar-php.git",
-                "reference": "850cbc3263867b49d6dba98ab9436afc3fe1794c"
+                "reference": "cdbed4e4923fbd3b11df910047282e2a42f0c5de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/datastar-php/zipball/850cbc3263867b49d6dba98ab9436afc3fe1794c",
-                "reference": "850cbc3263867b49d6dba98ab9436afc3fe1794c",
+                "url": "https://api.github.com/repos/putyourlightson/datastar-php/zipball/cdbed4e4923fbd3b11df910047282e2a42f0c5de",
+                "reference": "cdbed4e4923fbd3b11df910047282e2a42f0c5de",
                 "shasum": ""
             },
             "require": {
@@ -4051,7 +4051,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-10-18T13:43:01+00:00"
+            "time": "2024-10-28T17:01:32+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
