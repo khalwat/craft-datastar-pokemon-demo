@@ -5,6 +5,7 @@
 {# Query all the pokemon #}
 {% set results = craft.entries()
     .section(['pokemon'])
+    .orderby('score')
     .all() %}
 
 {# -- Content that appears before the primary content block -- #}
