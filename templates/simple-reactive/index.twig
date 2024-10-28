@@ -13,7 +13,7 @@
             <input
                 class="input input-bordered w-full max-w-xs"
                 data-model="input"
-                data-on-keydown="$characterCount = $characterCount + 1;"
+                data-on-keydown="$stats.characterCount = $stats.characterCount + 1;"
                 placeholder=""
                 type="text"
             />
@@ -31,10 +31,10 @@
 
 {# -- Content that appears after the primary content block -- #}
 {% block postContent %}
-    <section class="text-center" data-store="{ characterCount: 0 }">
+    <section class="text-center" data-store="{ stats: {characterCount: 0} }">
         <p>
             Characters typed:
-            <span data-text="$characterCount">0</span>
+            <span data-text="$stats.characterCount">0</span>
         </p>
     </section>
     <datastar-inspector></datastar-inspector>
