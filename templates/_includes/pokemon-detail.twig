@@ -9,7 +9,7 @@
 </div>
 <div class="flex-shrink mr-36">
     <div class="card bg-base-100 w-96 shadow-xl rounded-lg overflow-hidden m-2"
-         data-store="{{ sparkStoreFromClass('attributes\\stores\\PokemonDetail', {
+         data-store="{{ datastarStoreFromClass('attributes\\stores\\PokemonDetail', {
              entryId: pokemon.id,
              pokemonEntry: pokemon.getFieldValues(),
              editing: false
@@ -105,7 +105,7 @@
                         Cancel
                     </button>
                     <button class="btn btn-primary"
-                            data-on-click="{{ spark('_spark/save-entry.twig', method: 'post') }}"
+                            data-on-click="{{ datastar('_datastar/save-entry.twig', method: 'post') }}"
                             data-show="$editing"
                     >
                         Save

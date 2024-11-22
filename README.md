@@ -1,9 +1,9 @@
-# Spark / Datastar Pokemon demo
+# Craft Datastar Pokemon demo
 
-This project was made for a DotOne conference talk on using the [Spark](https://putyourlightson.com/plugins/spark)
+This project was made for a DotOne conference talk on using the [Craft Datastar](https://github.com/putyourlightson/craft-datastar)
 plugin for Craft CMS with [Datastar](https://datastar.fly.dev/) to create reactive UI.
 
-It uses Datastar to provide the frontend reactive UI, coupled with Spark to interface with the Craft CMS backend.
+It uses Datastar to provide the frontend reactive UI, coupled with Craft Datastar plugin to interface with the Craft CMS backend.
 
 This allows you to leverage the Craft CMS & Twig APIs that you're used to in order to create dynamic websites.
 
@@ -25,7 +25,7 @@ Craft CMS database (assuming you are logged in).
 * Pokemon database is from [PokemonData](https://github.com/lgreski/pokemonData)
 * Pokemon images are
   from [The Complete Pokemon Images Data Set](https://www.kaggle.com/datasets/arenagrenade/the-complete-pokemon-images-data-set)
-* Ben Croker for making [Spark](https://putyourlightson.com/plugins/spark) for Craft CMS and helping with the demo
+* Ben Croker for making [Craft Datastar](https://github.com/putyourlightson/craft-datastar) for Craft CMS and helping with the demo
 
 # Spin Up Craft 5.0 Beta
 

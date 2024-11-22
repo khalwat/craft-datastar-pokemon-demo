@@ -1,6 +1,6 @@
 {# @var response \craft\web\Response #}
 {# @var store \attributes\stores\PokemonDetail #}
-{% set response = spark.runAction('entries/save-entry', {
+{% set response = datastar.runAction('entries/save-entry', {
     entryId: store.entryId,
     fields: store.pokemonEntry
 }) %}

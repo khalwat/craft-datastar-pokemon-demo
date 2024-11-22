@@ -2,7 +2,7 @@ columnSuffix: null
 handle: pokemonName
 instructions: null
 name: 'Pokemon Name'
-searchable: true
+searchable: false
 settings:
   byteLimit: null
   charLimit: null

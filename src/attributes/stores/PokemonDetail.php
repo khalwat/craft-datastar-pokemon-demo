@@ -4,7 +4,7 @@ namespace attributes\stores;
 
 use Attribute;
 use attributes\PokemonEntryType;
-use putyourlightson\spark\models\StoreModel;
+use putyourlightson\datastar\models\StoreModel;
 
 #[Attribute]
 class PokemonDetail extends StoreModel

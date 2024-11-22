@@ -3,7 +3,7 @@
 namespace attributes\stores;
 
 use Attribute;
-use putyourlightson\spark\models\StoreModel;
+use putyourlightson\datastar\models\StoreModel;
 
 #[Attribute]
 class FacetedSearch extends StoreModel

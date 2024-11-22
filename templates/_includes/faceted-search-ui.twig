@@ -4,7 +4,7 @@
         id="search-field"
         class="input input-bordered w-full max-w-xs m-3"
         data-model="search"
-        data-on-input.debounce_200ms="{{ spark('_spark/faceted-search.twig') }}"
+        data-on-input.debounce_200ms="{{ datastar('_datastar/faceted-search.twig') }}"
         placeholder="Search..."
         type="text"
     />
@@ -19,7 +19,7 @@
             class="select select-bordered max-w-xs"
             name="generation"
             data-model="generation"
-            data-on-change="{{ spark('_spark/faceted-search.twig') }}">
+            data-on-change="{{ datastar('_datastar/faceted-search.twig') }}">
             <option value="0">All</option>
             {{ include("_includes/options-generation.twig") }}
         </select>
@@ -32,7 +32,7 @@
             class="select select-bordered max-w-xs"
             name="type"
             data-model="type"
-            data-on-change="{{ spark('_spark/faceted-search.twig') }}">
+            data-on-change="{{ datastar('_datastar/faceted-search.twig') }}">
             <option value="all">All</option>
             {{ include("_includes/options-type.twig") }}
         </select>
