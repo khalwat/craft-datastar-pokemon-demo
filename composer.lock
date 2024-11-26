@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ebeef22fd7c229b5a0b6852ad03b3c41",
+    "content-hash": "1d1d23bd05edf6a3f67c944f7e8b15c5",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -585,16 +585,16 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "5.5.2",
+            "version": "5.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "43dc9cfba1d5ccb1cd0b5da4ff1ab6459db26811"
+                "reference": "20199c5340825146f2354d0a29fb694b7d86e400"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/43dc9cfba1d5ccb1cd0b5da4ff1ab6459db26811",
-                "reference": "43dc9cfba1d5ccb1cd0b5da4ff1ab6459db26811",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/20199c5340825146f2354d0a29fb694b7d86e400",
+                "reference": "20199c5340825146f2354d0a29fb694b7d86e400",
                 "shasum": ""
             },
             "require": {
@@ -708,7 +708,7 @@
                 "rss": "https://github.com/craftcms/cms/releases.atom",
                 "source": "https://github.com/craftcms/cms"
             },
-            "time": "2024-11-19T17:17:31+00:00"
+            "time": "2024-11-22T23:29:45+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -4131,22 +4131,22 @@
         },
         {
             "name": "putyourlightson/craft-datastar",
-            "version": "1.0.0-alpha.1",
+            "version": "1.0.0-alpha.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/putyourlightson/craft-datastar.git",
-                "reference": "f43717a87d9761810cbd91701f037f25c706f8a5"
+                "reference": "d9d92e4c53166fbf39b4c0cd006cf84df93309b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-datastar/zipball/f43717a87d9761810cbd91701f037f25c706f8a5",
-                "reference": "f43717a87d9761810cbd91701f037f25c706f8a5",
+                "url": "https://api.github.com/repos/putyourlightson/craft-datastar/zipball/d9d92e4c53166fbf39b4c0cd006cf84df93309b9",
+                "reference": "d9d92e4c53166fbf39b4c0cd006cf84df93309b9",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^5.0",
                 "php": "^8.2",
-                "putyourlightson/craft-datastar-module": "^1.0.0-alpha.1"
+                "putyourlightson/craft-datastar-module": "1.0.0-alpha.3"
             },
             "require-dev": {
                 "craftcms/ecs": "dev-main",
@@ -4175,7 +4175,7 @@
             "description": "A real-time, template-driven hypermedia framework for Craft.",
             "support": {
                 "issues": "https://github.com/putyourlightson/craft-datastar/issues",
-                "source": "https://github.com/putyourlightson/craft-datastar/tree/1.0.0-alpha.1"
+                "source": "https://github.com/putyourlightson/craft-datastar/tree/1.0.0-alpha.3"
             },
             "funding": [
                 {
@@ -4183,26 +4183,26 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-22T09:11:49+00:00"
+            "time": "2024-11-26T14:42:26+00:00"
         },
         {
             "name": "putyourlightson/craft-datastar-module",
-            "version": "1.0.0-alpha.1",
+            "version": "1.0.0-alpha.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/putyourlightson/craft-datastar-module.git",
-                "reference": "df6429ac2294d3d7c5ca28d04013888f56595214"
+                "reference": "0b1f4c15b4a006ee14504db21e83d18d91630205"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-datastar-module/zipball/df6429ac2294d3d7c5ca28d04013888f56595214",
-                "reference": "df6429ac2294d3d7c5ca28d04013888f56595214",
+                "url": "https://api.github.com/repos/putyourlightson/craft-datastar-module/zipball/0b1f4c15b4a006ee14504db21e83d18d91630205",
+                "reference": "0b1f4c15b4a006ee14504db21e83d18d91630205",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^5.0",
                 "php": "^8.2",
-                "starfederation/datastar-php": "dev-main"
+                "starfederation/datastar-php": "1.0.0-alpha.2"
             },
             "require-dev": {
                 "craftcms/ecs": "dev-main",
@@ -4232,7 +4232,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-11-22T09:58:22+00:00"
+            "time": "2024-11-26T14:37:33+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -4655,16 +4655,16 @@
         },
         {
             "name": "starfederation/datastar-php",
-            "version": "dev-main",
+            "version": "1.0.0-alpha.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/starfederation/datastar-php.git",
-                "reference": "723557677204ff4f438cf219c60a5fd4d1ae55d3"
+                "reference": "369c60b80f17e5ba3cb0c0498a117f3b836d7e78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/starfederation/datastar-php/zipball/723557677204ff4f438cf219c60a5fd4d1ae55d3",
-                "reference": "723557677204ff4f438cf219c60a5fd4d1ae55d3",
+                "url": "https://api.github.com/repos/starfederation/datastar-php/zipball/369c60b80f17e5ba3cb0c0498a117f3b836d7e78",
+                "reference": "369c60b80f17e5ba3cb0c0498a117f3b836d7e78",
                 "shasum": ""
             },
             "require": {
@@ -4675,7 +4675,6 @@
                 "craftcms/phpstan": "dev-main",
                 "pestphp/pest": "^3.5"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -4686,13 +4685,20 @@
             "license": [
                 "mit"
             ],
+            "authors": [
+                {
+                    "name": "Ben Croker",
+                    "homepage": "https://putyourlightson.com/",
+                    "role": "Author"
+                }
+            ],
             "description": "A PHP SDK for working with Datastar.",
             "support": {
                 "docs": "https://github.com/starfederation/datastar-php",
                 "issues": "https://github.com/starfederation/datastar-php/issues",
                 "source": "https://github.com/starfederation/datastar-php"
             },
-            "time": "2024-11-22T10:11:43+00:00"
+            "time": "2024-11-26T14:01:20+00:00"
         },
         {
             "name": "symfony/clock",
