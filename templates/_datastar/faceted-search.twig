@@ -1,4 +1,4 @@
-{# @var store \attributes\stores\FacetedSearch #}
+{# @var signals \attributes\signals\FacetedSearch #}
 
 {# Set up the query to get the Pokemon! #}
 {% set results = [] %}
@@ -6,16 +6,16 @@
     .section(['pokemon'])
     .orderBy('score') %}
 {# Handle the generation facet #}
-{% if store.generation != 0 %}
-    {% do query.generation(store.generation) %}
+{% if signals.generation != 0 %}
+    {% do query.generation(signals.generation) %}
 {% endif %}
 {# Handle the generation facet #}
-{% if store.type != 'all' %}
-    {% do query.type1(store.type) %}
+{% if signals.type != 'all' %}
+    {% do query.type1(signals.type) %}
 {% endif %}
 {# Handle the search string #}
-{% if store.search is not empty %}
-    {% do query.search(store.search) %}
+{% if signals.search is not empty %}
+    {% do query.search(signals.search) %}
 {% endif %}
 {# Execute the query to fetch the results #}
 {% set results = query.all() %}
@@ -31,4 +31,4 @@
 {% endfragment %}
 
 {# Increment the number of searches we've done #}
-{% do store.searchCount(store.searchCount + 1) %}
+{% do signals.searchCount(signals.searchCount + 1) %}

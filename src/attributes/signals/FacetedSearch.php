@@ -1,12 +1,11 @@
 <?php
 
-namespace attributes\stores;
+namespace attributes\signals;
 
 use Attribute;
-use putyourlightson\datastar\models\StoreModel;
 
 #[Attribute]
-class FacetedSearch extends StoreModel
+class FacetedSearch
 {
     /** @var string $search The search string */
     public string $search = '';

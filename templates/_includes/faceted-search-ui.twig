@@ -3,13 +3,13 @@
     <input
         id="search-field"
         class="input input-bordered w-full max-w-xs m-3"
-        data-model="search"
-        data-on-input.debounce_200ms="{{ datastar('_datastar/faceted-search.twig') }}"
+        data-bind-search
+        data-on-input__debounce.200ms="{{ datastar.sse('_datastar/faceted-search.twig') }}"
         placeholder="Search..."
         type="text"
     />
     <div class="inline" style="display: none"
-         data-show="$search != ''"
+         data-show="search.value != ''"
     ></div>
     {# The generation facet #}
     <div class="inline m-3">
@@ -18,8 +18,8 @@
             id="generation-field"
             class="select select-bordered max-w-xs"
             name="generation"
-            data-model="generation"
-            data-on-change="{{ datastar('_datastar/faceted-search.twig') }}">
+            data-bind-generation
+            data-on-change="{{ datastar.sse('_datastar/faceted-search.twig') }}">
             <option value="0">All</option>
             {{ include("_includes/options-generation.twig") }}
         </select>
@@ -31,8 +31,8 @@
             id="type-field"
             class="select select-bordered max-w-xs"
             name="type"
-            data-model="type"
-            data-on-change="{{ datastar('_datastar/faceted-search.twig') }}">
+            data-bind-type
+            data-on-change="{{ datastar.sse('_datastar/faceted-search.twig') }}">
             <option value="all">All</option>
             {{ include("_includes/options-type.twig") }}
         </select>
