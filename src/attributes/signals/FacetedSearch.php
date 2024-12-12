@@ -3,9 +3,10 @@
 namespace attributes\signals;
 
 use Attribute;
+use putyourlightson\datastar\models\SignalsModel;
 
 #[Attribute]
-class FacetedSearch
+class FacetedSearch extends SignalsModel
 {
     /** @var string $search The search string */
     public string $search = '';

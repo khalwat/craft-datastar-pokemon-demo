@@ -4,9 +4,10 @@ namespace attributes\signals;
 
 use Attribute;
 use attributes\PokemonEntryType;
+use putyourlightson\datastar\models\SignalsModel;
 
 #[Attribute]
-class PokemonDetail
+class PokemonDetail extends SignalsModel
 {
     /** @var ?int The entry ID */
     public ?int $entryId = 0;
