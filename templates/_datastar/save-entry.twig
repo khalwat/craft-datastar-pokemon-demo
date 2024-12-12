@@ -1,28 +1,28 @@
 {# @var response \craft\web\Response #}
-{# @var store \attributes\stores\PokemonDetail #}
+{# @var signals \attributes\signals\PokemonDetail #}
 
 {% set response = datastar.runAction('entries/save-entry', {
-    entryId: store.entryId,
-    fields: store.pokemonEntry
+    entryId: signals.entryId,
+    fields: signals.pokemonEntry
 }) %}
 {% if response.isSuccessful %}
     {% fragment %}
         <h1 id="title" class="text-5xl font-bold">
-            {{ store.pokemonEntry.pokemonName }}
+            {{ signals.pokemonEntry.pokemonName }}
         </h1>
     {% endfragment %}
     {% fragment %}
         <div id="alert" class="alert alert-success"
-             data-show="!$editing"
+             data-show="!editing.value"
         >
             Saved!
         </div>
     {% endfragment %}
-    {% do store.editing(false) %}
+    {% do signals.editing(false) %}
 {% else %}
     {% fragment %}
         <div id="alert" class="alert alert-error"
-             data-show="$editing"
+             data-show="editing.value"
         >
             {{ response.data.errors|first|first }}
         </div>

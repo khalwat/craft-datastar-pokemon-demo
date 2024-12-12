@@ -1,13 +1,12 @@
 <?php
 
-namespace attributes\stores;
+namespace attributes\signals;
 
 use Attribute;
 use attributes\PokemonEntryType;
-use putyourlightson\datastar\models\StoreModel;
 
 #[Attribute]
-class PokemonDetail extends StoreModel
+class PokemonDetail
 {
     /** @var ?int The entry ID */
     public ?int $entryId = 0;

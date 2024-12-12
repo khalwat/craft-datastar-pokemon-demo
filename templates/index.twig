@@ -15,7 +15,7 @@
 
 {# -- Primary content block -- #}
 {% block content %}
-    <div data-store="{{ datastarStoreFromClass('attributes\\stores\\FacetedSearch') }}">
+    <div data-signals="{searchCount: 0}">
         {# The faceted search UI #}
         {{ include("_includes/faceted-search-ui.twig", {}, with_context = false) }}
         {# The search results #}
@@ -30,7 +30,7 @@
     {# Display some stats #}
     <section class="text-center align-baseline">
         <p>
-            Searches: <span data-text="$searchCount">0</span>
+            Searches: <span data-text="searchCount.value">0</span>
         </p>
     </section>
 {% endblock %}
