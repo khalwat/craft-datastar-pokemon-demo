@@ -13,7 +13,7 @@
     {% endfragment %}
     {% fragment %}
         <div id="alert" class="alert alert-success"
-             data-show="!editing.value"
+             data-show="!$editing"
         >
             Saved!
         </div>
@@ -22,7 +22,7 @@
 {% else %}
     {% fragment %}
         <div id="alert" class="alert alert-error"
-             data-show="editing.value"
+             data-show="$editing"
         >
             {{ response.data.errors|first|first }}
         </div>

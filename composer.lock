@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "76f9fe0e56dd1028f2f2d37a92f0265b",
+    "content-hash": "9a6c3e193064b34153be1e2b7522bb0d",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -122,16 +122,16 @@
         },
         {
             "name": "cakephp/core",
-            "version": "5.1.2",
+            "version": "5.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/core.git",
-                "reference": "70f99f5df4dde8677ddcf6245654a8b937f7786b"
+                "reference": "fdd2ab323284cc8475decaeaad4a3398aa90ff91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/core/zipball/70f99f5df4dde8677ddcf6245654a8b937f7786b",
-                "reference": "70f99f5df4dde8677ddcf6245654a8b937f7786b",
+                "url": "https://api.github.com/repos/cakephp/core/zipball/fdd2ab323284cc8475decaeaad4a3398aa90ff91",
+                "reference": "fdd2ab323284cc8475decaeaad4a3398aa90ff91",
                 "shasum": ""
             },
             "require": {
@@ -180,20 +180,20 @@
                 "issues": "https://github.com/cakephp/cakephp/issues",
                 "source": "https://github.com/cakephp/core"
             },
-            "time": "2024-10-31T06:55:29+00:00"
+            "time": "2024-11-30T18:47:29+00:00"
         },
         {
             "name": "cakephp/utility",
-            "version": "5.1.2",
+            "version": "5.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/utility.git",
-                "reference": "a1a503e9ef96761242eb260df0e04eb0e068e5cd"
+                "reference": "943342ca3c0fc3cccb9f789340ff7eb5eceb1839"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/utility/zipball/a1a503e9ef96761242eb260df0e04eb0e068e5cd",
-                "reference": "a1a503e9ef96761242eb260df0e04eb0e068e5cd",
+                "url": "https://api.github.com/repos/cakephp/utility/zipball/943342ca3c0fc3cccb9f789340ff7eb5eceb1839",
+                "reference": "943342ca3c0fc3cccb9f789340ff7eb5eceb1839",
                 "shasum": ""
             },
             "require": {
@@ -239,7 +239,7 @@
                 "issues": "https://github.com/cakephp/cakephp/issues",
                 "source": "https://github.com/cakephp/utility"
             },
-            "time": "2024-11-08T14:07:41+00:00"
+            "time": "2024-11-30T18:47:29+00:00"
         },
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -585,16 +585,16 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "5.5.6.1",
+            "version": "5.5.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/craftcms/cms.git",
-                "reference": "a8bf00237ada556acd2b2245639d1cf54c903a02"
+                "reference": "b1e323bd8935be2cdbe64e880859a484fbfe216a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/a8bf00237ada556acd2b2245639d1cf54c903a02",
-                "reference": "a8bf00237ada556acd2b2245639d1cf54c903a02",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/b1e323bd8935be2cdbe64e880859a484fbfe216a",
+                "reference": "b1e323bd8935be2cdbe64e880859a484fbfe216a",
                 "shasum": ""
             },
             "require": {
@@ -708,7 +708,7 @@
                 "rss": "https://github.com/craftcms/cms/releases.atom",
                 "source": "https://github.com/craftcms/cms"
             },
-            "time": "2024-12-11T14:14:05+00:00"
+            "time": "2024-12-19T17:38:43+00:00"
         },
         {
             "name": "craftcms/feed-me",
@@ -1295,16 +1295,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "4.0.2",
+            "version": "4.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "ebaaf5be6c0286928352e054f2d5125608e5405e"
+                "reference": "b115554301161fa21467629f1e1391c1936de517"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/ebaaf5be6c0286928352e054f2d5125608e5405e",
-                "reference": "ebaaf5be6c0286928352e054f2d5125608e5405e",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/b115554301161fa21467629f1e1391c1936de517",
+                "reference": "b115554301161fa21467629f1e1391c1936de517",
                 "shasum": ""
             },
             "require": {
@@ -1350,7 +1350,7 @@
             ],
             "support": {
                 "issues": "https://github.com/egulias/EmailValidator/issues",
-                "source": "https://github.com/egulias/EmailValidator/tree/4.0.2"
+                "source": "https://github.com/egulias/EmailValidator/tree/4.0.3"
             },
             "funding": [
                 {
@@ -1358,7 +1358,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-10-06T06:47:41+00:00"
+            "time": "2024-12-27T00:36:43+00:00"
         },
         {
             "name": "elvanto/litemoji",
@@ -2276,16 +2276,16 @@
         },
         {
             "name": "league/csv",
-            "version": "9.19.0",
+            "version": "9.20.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/csv.git",
-                "reference": "f81df48a012a9e86d077e74eaff666fd15bfab88"
+                "reference": "491d1e79e973a7370c7571dc0fe4a7241f4936ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/csv/zipball/f81df48a012a9e86d077e74eaff666fd15bfab88",
-                "reference": "f81df48a012a9e86d077e74eaff666fd15bfab88",
+                "url": "https://api.github.com/repos/thephpleague/csv/zipball/491d1e79e973a7370c7571dc0fe4a7241f4936ee",
+                "reference": "491d1e79e973a7370c7571dc0fe4a7241f4936ee",
                 "shasum": ""
             },
             "require": {
@@ -2359,7 +2359,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-08T08:09:35+00:00"
+            "time": "2024-12-18T10:11:15+00:00"
         },
         {
             "name": "league/uri",
@@ -2774,16 +2774,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "3.8.2",
+            "version": "3.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "e1268cdbc486d97ce23fef2c666dc3c6b6de9947"
+                "reference": "129700ed449b1f02d70272d2ac802357c8c30c58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/e1268cdbc486d97ce23fef2c666dc3c6b6de9947",
-                "reference": "e1268cdbc486d97ce23fef2c666dc3c6b6de9947",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/129700ed449b1f02d70272d2ac802357c8c30c58",
+                "reference": "129700ed449b1f02d70272d2ac802357c8c30c58",
                 "shasum": ""
             },
             "require": {
@@ -2815,10 +2815,6 @@
             ],
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "3.x-dev",
-                    "dev-2.x": "2.x-dev"
-                },
                 "laravel": {
                     "providers": [
                         "Carbon\\Laravel\\ServiceProvider"
@@ -2828,6 +2824,10 @@
                     "includes": [
                         "extension.neon"
                     ]
+                },
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev",
+                    "dev-master": "3.x-dev"
                 }
             },
             "autoload": {
@@ -2876,7 +2876,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-11-07T17:46:48+00:00"
+            "time": "2024-12-27T09:25:35+00:00"
         },
         {
             "name": "nystudio107/craft-code-editor",
@@ -4129,22 +4129,22 @@
         },
         {
             "name": "putyourlightson/craft-datastar",
-            "version": "1.0.0-beta.1",
+            "version": "1.0.0-beta.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/putyourlightson/craft-datastar.git",
-                "reference": "26a9a05b1889456411aca648a4e27c52605eb9da"
+                "reference": "c9cf1fb363206c31a62969e21aaf37246cd260ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-datastar/zipball/26a9a05b1889456411aca648a4e27c52605eb9da",
-                "reference": "26a9a05b1889456411aca648a4e27c52605eb9da",
+                "url": "https://api.github.com/repos/putyourlightson/craft-datastar/zipball/c9cf1fb363206c31a62969e21aaf37246cd260ad",
+                "reference": "c9cf1fb363206c31a62969e21aaf37246cd260ad",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^5.0",
                 "php": "^8.2",
-                "putyourlightson/craft-datastar-module": "1.0.0-beta.1"
+                "putyourlightson/craft-datastar-module": "^1.0.0-beta.4"
             },
             "require-dev": {
                 "craftcms/ecs": "dev-main",
@@ -4173,7 +4173,7 @@
             "description": "A real-time, template-driven hypermedia framework for Craft.",
             "support": {
                 "issues": "https://github.com/putyourlightson/craft-datastar/issues",
-                "source": "https://github.com/putyourlightson/craft-datastar/tree/1.0.0-beta.1"
+                "source": "https://github.com/putyourlightson/craft-datastar/tree/1.0.0-beta.3"
             },
             "funding": [
                 {
@@ -4181,26 +4181,26 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-12T01:14:29+00:00"
+            "time": "2025-01-02T15:59:44+00:00"
         },
         {
             "name": "putyourlightson/craft-datastar-module",
-            "version": "1.0.0-beta.1",
+            "version": "1.0.0-beta.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/putyourlightson/craft-datastar-module.git",
-                "reference": "fb0a1e6fdd1a89abc57612cfe3dc5be33823c2d8"
+                "reference": "49d031fca6d7f9d67f2fb811346a2111c5299a06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/putyourlightson/craft-datastar-module/zipball/fb0a1e6fdd1a89abc57612cfe3dc5be33823c2d8",
-                "reference": "fb0a1e6fdd1a89abc57612cfe3dc5be33823c2d8",
+                "url": "https://api.github.com/repos/putyourlightson/craft-datastar-module/zipball/49d031fca6d7f9d67f2fb811346a2111c5299a06",
+                "reference": "49d031fca6d7f9d67f2fb811346a2111c5299a06",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^5.0",
                 "php": "^8.2",
-                "starfederation/datastar-php": "1.0.0-beta.2"
+                "starfederation/datastar-php": "1.0.0-beta.5"
             },
             "require-dev": {
                 "craftcms/ecs": "dev-main",
@@ -4230,7 +4230,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-11T22:42:33+00:00"
+            "time": "2025-01-02T15:49:37+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -4653,16 +4653,16 @@
         },
         {
             "name": "starfederation/datastar-php",
-            "version": "1.0.0-beta.2",
+            "version": "1.0.0-beta.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/starfederation/datastar-php.git",
-                "reference": "f561453c0ae58f7c444ae2d585ef32e974ab8354"
+                "reference": "dcbd3590badeac0c5c772d77c50799ed2dd93bd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/starfederation/datastar-php/zipball/f561453c0ae58f7c444ae2d585ef32e974ab8354",
-                "reference": "f561453c0ae58f7c444ae2d585ef32e974ab8354",
+                "url": "https://api.github.com/repos/starfederation/datastar-php/zipball/dcbd3590badeac0c5c772d77c50799ed2dd93bd2",
+                "reference": "dcbd3590badeac0c5c772d77c50799ed2dd93bd2",
                 "shasum": ""
             },
             "require": {
@@ -4696,7 +4696,7 @@
                 "issues": "https://github.com/starfederation/datastar-php/issues",
                 "source": "https://github.com/starfederation/datastar-php"
             },
-            "time": "2024-12-11T22:26:35+00:00"
+            "time": "2025-01-02T15:40:03+00:00"
         },
         {
             "name": "symfony/clock",
@@ -4791,12 +4791,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "3.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
@@ -4939,12 +4939,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "3.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
@@ -5063,23 +5063,23 @@
         },
         {
             "name": "symfony/http-client",
-            "version": "v6.4.16",
+            "version": "v6.4.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-client.git",
-                "reference": "60a113666fa67e598abace38e5f46a0954d8833d"
+                "reference": "88898d842eb29d7e1a903724c94e90a6ca9c0509"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-client/zipball/60a113666fa67e598abace38e5f46a0954d8833d",
-                "reference": "60a113666fa67e598abace38e5f46a0954d8833d",
+                "url": "https://api.github.com/repos/symfony/http-client/zipball/88898d842eb29d7e1a903724c94e90a6ca9c0509",
+                "reference": "88898d842eb29d7e1a903724c94e90a6ca9c0509",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.1",
                 "psr/log": "^1|^2|^3",
                 "symfony/deprecation-contracts": "^2.5|^3",
-                "symfony/http-client-contracts": "~3.4.3|^3.5.1",
+                "symfony/http-client-contracts": "~3.4.4|^3.5.2",
                 "symfony/service-contracts": "^2.5|^3"
             },
             "conflict": {
@@ -5136,7 +5136,7 @@
                 "http"
             ],
             "support": {
-                "source": "https://github.com/symfony/http-client/tree/v6.4.16"
+                "source": "https://github.com/symfony/http-client/tree/v6.4.17"
             },
             "funding": [
                 {
@@ -5152,7 +5152,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-11-27T11:52:33+00:00"
+            "time": "2024-12-18T12:18:31+00:00"
         },
         {
             "name": "symfony/http-client-contracts",
@@ -5501,8 +5501,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
                 }
             },
             "autoload": {
@@ -6392,22 +6392,22 @@
         },
         {
             "name": "symfony/property-info",
-            "version": "v7.2.1",
+            "version": "v7.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/property-info.git",
-                "reference": "65fb9be15380f949d72ff405473cce733364b8b4"
+                "reference": "1dfeb0dac7a99f7b3be42db9ccc299c5a6483fcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/property-info/zipball/65fb9be15380f949d72ff405473cce733364b8b4",
-                "reference": "65fb9be15380f949d72ff405473cce733364b8b4",
+                "url": "https://api.github.com/repos/symfony/property-info/zipball/1dfeb0dac7a99f7b3be42db9ccc299c5a6483fcf",
+                "reference": "1dfeb0dac7a99f7b3be42db9ccc299c5a6483fcf",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.2",
                 "symfony/string": "^6.4|^7.0",
-                "symfony/type-info": "^7.1"
+                "symfony/type-info": "~7.1.9|^7.2.2"
             },
             "conflict": {
                 "phpdocumentor/reflection-docblock": "<5.2",
@@ -6455,7 +6455,7 @@
                 "validator"
             ],
             "support": {
-                "source": "https://github.com/symfony/property-info/tree/v7.2.1"
+                "source": "https://github.com/symfony/property-info/tree/v7.2.2"
             },
             "funding": [
                 {
@@ -6471,7 +6471,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-07T08:50:44+00:00"
+            "time": "2024-12-31T11:04:50+00:00"
         },
         {
             "name": "symfony/serializer",
@@ -6595,12 +6595,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "3.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
@@ -6855,12 +6855,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "3.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
@@ -6916,16 +6916,16 @@
         },
         {
             "name": "symfony/type-info",
-            "version": "v7.2.1",
+            "version": "v7.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/type-info.git",
-                "reference": "4f402070b08ad0b87e9cadbb07b87fb36061e6e4"
+                "reference": "3b5a17470fff0034f25fd4287cbdaa0010d2f749"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/type-info/zipball/4f402070b08ad0b87e9cadbb07b87fb36061e6e4",
-                "reference": "4f402070b08ad0b87e9cadbb07b87fb36061e6e4",
+                "url": "https://api.github.com/repos/symfony/type-info/zipball/3b5a17470fff0034f25fd4287cbdaa0010d2f749",
+                "reference": "3b5a17470fff0034f25fd4287cbdaa0010d2f749",
                 "shasum": ""
             },
             "require": {
@@ -6971,7 +6971,7 @@
                 "type"
             ],
             "support": {
-                "source": "https://github.com/symfony/type-info/tree/v7.2.1"
+                "source": "https://github.com/symfony/type-info/tree/v7.2.2"
             },
             "funding": [
                 {
@@ -6987,7 +6987,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-11T07:49:41+00:00"
+            "time": "2024-12-20T13:38:37+00:00"
         },
         {
             "name": "symfony/uid",
@@ -8204,8 +8204,8 @@
             "type": "library",
             "extra": {
                 "thanks": {
-                    "name": "web-auth/webauthn-framework",
-                    "url": "https://github.com/web-auth/webauthn-framework"
+                    "url": "https://github.com/web-auth/webauthn-framework",
+                    "name": "web-auth/webauthn-framework"
                 }
             },
             "autoload": {

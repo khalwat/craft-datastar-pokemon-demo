@@ -13,17 +13,17 @@
             <input
                 class="input input-bordered w-full max-w-xs"
                 data-bind-input
-                data-on-keydown="stats.characterCount.value = stats.characterCount.value + 1"
+                data-on-keydown="$stats.characterCount = $stats.characterCount + 1"
                 placeholder=""
                 type="text"
             />
             <p class="text-3xl p-3">
-                <span data-text="input.value"></span>
-                <span data-show="input.value == 'Toronto'" style="display: none;">🇨🇦</span>
+                <span data-text="$input"></span>
+                <span data-show="$input == 'Toronto'" style="display: none;">🇨🇦</span>
             </p>
             <button
                 class="btn btn-primary m-3"
-                data-on-click="input.value = 'woof'; alert('Set it to woof!');">Set it to 'woof'!
+                data-on-click="$input = 'woof'; alert('Set it to woof!');">Set it to 'woof'!
             </button>
         </div>
     </section>
@@ -34,7 +34,7 @@
     <section class="text-center" data-signals="{stats: {characterCount: 0}}">
         <p>
             Characters typed:
-            <span data-text="stats.characterCount.value">0</span>
+            <span data-text="$stats.characterCount">0</span>
         </p>
     </section>
 {% endblock %}
