@@ -100,13 +100,13 @@
                 </table>
                 <div class="card-actions justify-end pt-6">
                     <button class="btn btn-neutral"
-                            data-on-click="$editing = false; $pokemonEntry.pokemonName = $origPokemonEntry.pokemonName; $pokemonEntry.type1 = $origPokemonEntry.type1; $pokemonEntry.generation = $origPokemonEntry.generation;"
+                            data-on-click="$editing = false; vals = ctx.signals.subset('origPokemonEntry'); vals['pokemonEntry'] = vals['origPokemonEntry']; ctx.signals.merge(vals)"
                             data-show="$editing"
                     >
                         Cancel
                     </button>
                     <button class="btn btn-primary"
-                            data-on-click="$origPokemonEntry.pokemonName = $pokemonEntry.pokemonName; $origPokemonEntry.type1 = $pokemonEntry.type1; $pokemonEntry.generation = $origPokemonEntry.generation; {{ datastar.post('_datastar/save-entry.twig') }}"
+                            data-on-click="vals = ctx.signals.subset('pokemonEntry'); vals['origPokemonEntry'] = vals['pokemonEntry']; ctx.signals.merge(vals); {{ datastar.post('_datastar/save-entry.twig') }}"
                             data-show="$editing"
                     >
                         Save
