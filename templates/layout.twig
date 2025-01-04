@@ -12,3 +12,11 @@
     <link href="{{ alias('@web/css/daisyui-full.min.css') }}" rel="stylesheet" type="text/css"/>
     <script src="{{ alias('@web/js/tailwindcss.min.js') }}"></script>
 {% endblock headLinks %}
+
+{% block postContent %}
+    <h1 class="text-xl">Datastar Signals (debug output):</h1>
+    <code>
+    <pre data-text="ctx.signals.JSON()">
+    </pre>
+    </code>
+{% endblock postContent %}
