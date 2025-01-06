@@ -37,3 +37,9 @@
     {% endif %}
     {{ alias("@web/assets/pokemon/#{pokemonId}.png") }}
 {% endmacro %}
+
+{% macro resetOrigPokemonEntrySignals() %}
+    {%- for property in ['pokemonName', 'type1', 'generation'] -%}
+        $pokemonEntry.{{ property }} = $origPokemonEntry.{{ property }};
+    {%- endfor -%}
+{% endmacro %}

@@ -100,7 +100,7 @@
                 </table>
                 <div class="card-actions justify-end pt-6">
                     <button class="btn btn-neutral"
-                            data-on-click="$editing = false; vals = ctx.signals.subset('origPokemonEntry'); vals['pokemonEntry'] = vals['origPokemonEntry']; ctx.signals.merge(vals)"
+                            data-on-click="$editing = false; {{ macros.resetOrigPokemonEntrySignals() }}"
                             data-show="$editing"
                     >
                         Cancel
