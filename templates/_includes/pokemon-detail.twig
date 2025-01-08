@@ -3,6 +3,7 @@
 {% import "_includes/macros.twig" as macros %}
 
 {% set imgUrl = macros.pokemonImageFromId(pokemon.pokemonId) | spaceless %}
+{% set typeMap = macros.typeMapJsObject() %}
 <div class="flex-shrink">
     <h3 class="m-3 text-3xl text-center"><a href="/">&larr; back &nbsp;</a></h3>
 </div>
@@ -14,7 +15,7 @@
         origPokemonEntry: pokemon.getFieldValues(),
         editing: false
     }|json_encode }}"
-         data-computed-gradient-color="const colorMap = {'Normal': 'gray', 'Fire': 'red', 'Water': 'blue', 'Electric': 'yellow', 'Grass': 'green', 'Ice': 'cyan', 'Fighting': 'amber', 'Poison': 'purple', 'Ground': 'orange', 'Flying': 'sky', 'Psychic': 'rose', 'Bug': 'emerald', 'Rock': 'orange', 'Ghost': 'violet', 'Dragon': 'violet', 'Dark': 'slate', 'Steel': 'neutral', 'Fairy': 'pink'}; colorMap[$pokemonEntry.type1] ?? 'gray'"
+         data-computed-gradient-color="const colorMap = {{ typeMap | raw }}; colorMap[$pokemonEntry.type1] ?? 'gray'"
     >
         <div data-attr-class="`bg-gradient-to-b from-${$gradientColor}-100 to-${$gradientColor}-600`">
             <figure class="p-10">

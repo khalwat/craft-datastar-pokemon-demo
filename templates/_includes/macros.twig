@@ -1,4 +1,4 @@
-{% macro colorFromType(type) %}
+{%- macro typeMap() -%}
     {% set typeMap = {
         'Normal': 'gray',
         'Fire': 'red',
@@ -19,21 +19,30 @@
         'Steel': 'neutral',
         'Fairy': 'pink'
     } %}
+    {{- typeMap | json_encode | raw -}}
+{%- endmacro -%}
+
+{%- macro typeMapJsObject() -%}
+    {{- _self.typeMap() | spaceless | replace({'"': "'"}) -}}
+{%- endmacro -%}
+
+{%- macro colorFromType(type) -%}
+    {% set typeMap = _self.typeMap() | json_decode %}
     {% set color = typeMap[type] ?? 'gray' %}
-    {{ color }}
-{% endmacro %}
+    {{- color -}}
+{%- endmacro -%}
 
-{% macro pokemonGradientClasses(color) %}
-    {{ "bg-gradient-to-b from-#{color}-100 to-#{color}-600" }}
-{% endmacro %}
+{%- macro pokemonGradientClasses(color) -%}
+    {{- "bg-gradient-to-b from-#{color}-100 to-#{color}-600" -}}
+{%- endmacro -%}
 
-{% macro cardGradientClasses() %}
-    {{ "bg-gradient-to-br from-gray-900 to-gray-600" }}
-{% endmacro %}
+{%- macro cardGradientClasses() -%}
+    {{- "bg-gradient-to-br from-gray-900 to-gray-600" -}}
+{%- endmacro -%}
 
-{% macro pokemonImageFromId(pokemonId) %}
+{%- macro pokemonImageFromId(pokemonId) -%}
     {% if pokemonId > 721 %}
         {% set pokemonId = 0 %}
     {% endif %}
-    {{ alias("@web/assets/pokemon/#{pokemonId}.png") }}
-{% endmacro %}
+    {{- alias("@web/assets/pokemon/#{pokemonId}.png") -}}
+{%- endmacro -%}
