@@ -13,7 +13,6 @@
              data-signals="{{ {
                  entryId: pokemon.id,
                  pokemonEntry: pokemon.getFieldValues(),
-                 origPokemonEntry: pokemon.getFieldValues(),
              }|json_encode }}"
              data-computed-gradient-color="const colorMap = {{ typeMap | raw }}; colorMap[$pokemonEntry.type1] ?? 'gray'"
         >
