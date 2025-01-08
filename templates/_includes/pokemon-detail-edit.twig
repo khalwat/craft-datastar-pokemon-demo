@@ -75,7 +75,7 @@
                             Cancel
                         </button>
                         <button class="btn btn-primary"
-                                data-on-click="vals = ctx.signals.subset('pokemonEntry'); vals['origPokemonEntry'] = vals['pokemonEntry']; ctx.signals.merge(vals); {{ datastar.post('_datastar/save-entry.twig') }}"
+                                data-on-click="{{ datastar.post('_datastar/save-entry.twig') }}"
                         >
                             Save
                         </button>
