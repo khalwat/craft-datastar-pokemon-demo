@@ -9,12 +9,12 @@
 </div>
 <div class="flex-shrink mr-36">
     <div class="card bg-base-100 w-96 shadow-xl rounded-lg overflow-hidden m-2"
-         ` data-signals="{{ {
-        entryId: pokemon.id,
-        pokemonEntry: pokemon.getFieldValues(),
-        origPokemonEntry: pokemon.getFieldValues(),
-        editing: false
-    }|json_encode }}"
+         data-signals="{{ {
+             entryId: pokemon.id,
+             pokemonEntry: pokemon.getFieldValues(),
+             origPokemonEntry: pokemon.getFieldValues(),
+             editing: false
+         }|json_encode }}"
          data-computed-gradient-color="const colorMap = {{ typeMap | raw }}; colorMap[$pokemonEntry.type1] ?? 'gray'"
     >
         <div data-attr-class="`bg-gradient-to-b from-${$gradientColor}-100 to-${$gradientColor}-600`">
