@@ -7,7 +7,5 @@
 
 {# -- Primary content block -- #}
 {% block content %}
-    <section class="flex flex-row items-center place-content-center my-4">
-        {{ include("_includes/pokemon-detail.twig", { pokemon: entry }, with_context = false) }}
-    </section>
+    {{ include("_includes/pokemon-detail.twig", { pokemon: entry }, with_context = false) }}
 {% endblock %}

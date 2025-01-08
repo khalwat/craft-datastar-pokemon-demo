@@ -3,120 +3,51 @@
 {% import "_includes/macros.twig" as macros %}
 
 {% set imgUrl = macros.pokemonImageFromId(pokemon.pokemonId) | spaceless %}
-{% set typeMap = macros.typeMapJsObject() %}
-<div class="flex-shrink">
-    <h3 class="m-3 text-3xl text-center"><a href="/">&larr; back &nbsp;</a></h3>
-</div>
-<div class="flex-shrink mr-36">
-    <div class="card bg-base-100 w-96 shadow-xl rounded-lg overflow-hidden m-2"
-         data-signals="{{ {
-             entryId: pokemon.id,
-             pokemonEntry: pokemon.getFieldValues(),
-             origPokemonEntry: pokemon.getFieldValues(),
-             editing: false
-         }|json_encode }}"
-         data-computed-gradient-color="const colorMap = {{ typeMap | raw }}; colorMap[$pokemonEntry.type1] ?? 'gray'"
-    >
-        <div data-attr-class="`bg-gradient-to-b from-${$gradientColor}-100 to-${$gradientColor}-600`">
-            <figure class="p-10">
-                <img
-                    src="{{ imgUrl }}"
-                    alt="{{ pokemon.pokemonName }}"/>
-            </figure>
-        </div>
-        <div class="card-body {{ macros.cardGradientClasses() }}">
-            {# The display card #}
-            <div class="space-y-2"
-                 data-show="!$editing"
-            >
-                <table class="table table-fixed pr-1">
-                    <tbody>
-                    <tr class="text-lg">
-                        <td class="text-right text-gray-500 w-1/3 pr-0">Name:</td>
-                        <td class="w-2/3" data-text="$pokemonEntry.pokemonName">{{ pokemon.pokemonName }}</td>
-                    </tr>
-                    <tr class="text-lg">
-                        <td class="text-right text-gray-500 w-1/3 pr-0">Type:</td>
-                        <td class="w-2/3" data-text="$pokemonEntry.type1">{{ pokemon.type1 }}</td>
-                    </tr>
-                    <tr class="text-lg">
-                        <td class="text-right text-gray-500 w-1/3 pr-0">Generation:</td>
-                        <td class="w-2/3" data-text="$pokemonEntry.generation">{{ pokemon.generation }}</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div class="card-actions justify-end">
-                    <button class="btn btn-primary"
-                            data-on-click="$editing = true"
-                            data-show="!$editing"
-                    >
-                        Edit
-                    </button>
-                </div>
+{% set backgroundColor = macros.colorFromType(pokemon.type1) | spaceless %}
+<section id="pokemon-detail" class="flex flex-row items-center place-content-center my-4">
+    <div class="flex-shrink">
+        <h3 class="m-3 text-3xl text-center"><a href="/">&larr; back &nbsp;</a></h3>
+    </div>
+    <div class="flex-shrink mr-36">
+        <div class="card bg-base-100 w-96 shadow-xl rounded-lg overflow-hidden m-2">
+            <div class="{{ macros.pokemonGradientClasses(backgroundColor) }}">
+                <figure class="p-10">
+                    <img
+                        src="{{ imgUrl }}"
+                        alt="{{ pokemon.pokemonName }}"/>
+                </figure>
             </div>
-            {# The editing card #}
-            <div class="space-y-2" style="display: none"
-                 data-show="$editing"
-            >
-                <table class="table table-fixed pr-1">
-                    <tbody>
-                    <tr class="text-lg">
-                        <td class="text-right text-gray-500 w-1/3 pr-0">Name:</td>
-                        <td class="w-2/3">
-                            <input type="text"
-                                   id="name"
-                                   class="input input-bordered w-full"
-                                   data-bind="pokemonEntry.pokemonName"
-                            >
-                        </td>
-                    </tr>
-                    <tr class="text-lg">
-                        <td class="text-right text-gray-500 w-1/3 pr-0">Type:</td>
-                        <td>
-                            <select
-                                id="type"
-                                class="select select-bordered w-full text-base"
-                                data-bind="pokemonEntry.type1"
-                            >
-                                {{ include("_includes/options-type.twig") }}
-                            </select>
-                        </td>
-                    </tr>
-                    <tr class="text-lg">
-                        <td class="text-right text-gray-500 w-1/3 pr-0">Generation:</td>
-                        <td>
-                            <select
-                                id="generation"
-                                class="select select-bordered w-full text-base"
-                                data-bind="pokemonEntry.generation"
-                            >
-                                {{ include("_includes/options-generation.twig") }}
-                            </select>
-                        </td>
-                    </tr>
-                    </tbody>
-                    <tfoot>
-                    <tr></tr>
-                    </tfoot>
-                </table>
-                <div class="card-actions justify-end pt-6">
-                    <button class="btn btn-neutral"
-                            data-on-click="$editing = false; vals = ctx.signals.subset('origPokemonEntry'); vals['pokemonEntry'] = vals['origPokemonEntry']; ctx.signals.merge(vals)"
-                            data-show="$editing"
-                    >
-                        Cancel
-                    </button>
-                    <button class="btn btn-primary"
-                            data-on-click="vals = ctx.signals.subset('pokemonEntry'); vals['origPokemonEntry'] = vals['pokemonEntry']; ctx.signals.merge(vals); {{ datastar.post('_datastar/save-entry.twig') }}"
-                            data-show="$editing"
-                    >
-                        Save
-                    </button>
+            <div class="card-body {{ macros.cardGradientClasses() }}">
+                {# The display card #}
+                <div class="space-y-2">
+                    <table class="table table-fixed pr-1">
+                        <tbody>
+                        <tr class="text-lg">
+                            <td class="text-right text-gray-500 w-1/3 pr-0">Name:</td>
+                            <td class="w-2/3">{{ pokemon.pokemonName }}</td>
+                        </tr>
+                        <tr class="text-lg">
+                            <td class="text-right text-gray-500 w-1/3 pr-0">Type:</td>
+                            <td class="w-2/3">{{ pokemon.type1 }}</td>
+                        </tr>
+                        <tr class="text-lg">
+                            <td class="text-right text-gray-500 w-1/3 pr-0">Generation:</td>
+                            <td class="w-2/3">{{ pokemon.generation }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary"
+                                data-on-click="{{ datastar.get('_datastar/pokemon-detail-edit.twig', { pokemonId: pokemon.id }) }}"
+                        >
+                            Edit
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="toast toast-bottom toast-end mb-12">
-                <div id="alert"></div>
+                <div class="toast toast-bottom toast-end mb-12">
+                    <div id="alert"></div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
