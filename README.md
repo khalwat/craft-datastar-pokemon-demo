@@ -37,11 +37,13 @@ few quick commands.
 Whether in-browser or on your local computer, you'll have a fully functional Craft CMS instance with an editor, content,
 Twig templates, and a database.
 
-## Spin Up Craft 5.0 Beta in a browser via Github Codespaces
+## Spin Up Craft 5.0 Beta in a browser via Github Codespaces or Codeanywhere
 
 1. Click this button:
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=master&repo=877062736)
+[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/khalwat/spark-datastar-pokemon-demo)
+
 
 3. In the resulting Terminal window, type `make dev` to start the project up
 3. Wait until you see output like this, and then access the site via the credentials that are output on the console:
