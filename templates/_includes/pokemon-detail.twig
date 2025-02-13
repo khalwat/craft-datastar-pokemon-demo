@@ -36,13 +36,16 @@
                         </tr>
                         </tbody>
                     </table>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary"
-                                data-on-click="{{ datastar.get('_datastar/pokemon-detail-edit.twig', { pokemonId: pokemon.id }) }}"
-                        >
-                            Edit
-                        </button>
-                    </div>
+                    {% set section = craft.app.entries.sectionByHandle('pokemon') %}
+                    {% if currentUser and currentUser.can('saveEntries:' ~ section.uid) %}
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-primary"
+                                    data-on-click="{{ datastar.get('_datastar/pokemon-detail-edit.twig', { pokemonId: pokemon.id }) }}"
+                            >
+                                Edit
+                            </button>
+                        </div>
+                    {% endif %}
                 </div>
                 <div class="toast toast-bottom toast-end mb-12">
                     <div id="alert"></div>

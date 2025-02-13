@@ -1,10 +1,18 @@
-{# Set up the query to get the Pokemon! #}
-{% set entry = craft.entries()
-    .section(['pokemon'])
-    .id(pokemonId)
-    .one() %}
+{% set section = craft.app.entries.sectionByHandle('pokemon') %}
+{% if currentUser and currentUser.can('saveEntries:' ~ section.uid) %}
+    {# Set up the query to get the Pokemon! #}
+    {% set entry = craft.entries()
+        .section(['pokemon'])
+        .id(pokemonId)
+        .one() %}
 
-{# The search results fragment #}
-{% fragment %}
-    {{ include("_includes/pokemon-detail-edit.twig", { pokemon: entry }, with_context = false) }}
-{% endfragment %}
+    {# The search results fragment #}
+    {% fragment %}
+        {{ include("_includes/pokemon-detail-edit.twig", { pokemon: entry }, with_context = false) }}
+    {% endfragment %}
+{% else %}
+    {# Output a permission error #}
+    {% fragment %}
+        {{ include("_includes/permission-error.twig", {}, with_context = false) }}
+    {% endfragment %}
+{% endif %}

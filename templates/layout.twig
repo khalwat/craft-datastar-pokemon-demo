@@ -11,6 +11,11 @@
 {% block headLinks %}
     <link href="{{ alias('@web/css/daisyui-full.min.css') }}" rel="stylesheet" type="text/css"/>
     <script src="{{ alias('@web/js/tailwindcss.min.js') }}"></script>
+    <style>
+        @view-transition {
+            navigation: auto;
+        }
+    </style>
 {% endblock headLinks %}
 
 {% block postContent %}
