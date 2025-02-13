@@ -1,32 +1,40 @@
 {# @var response \craft\web\Response #}
 {# @var signals \attributes\signals\PokemonDetail #}
 
-{% set response = datastar.runAction('entries/save-entry', {
-    entryId: signals.entryId,
-    fields: signals.pokemonEntry
-}) %}
-{% if response.isSuccessful %}
-    {% fragment %}
-        <h1 id="title" class="text-5xl font-bold">
-            {{ signals.pokemonEntry.pokemonName }}
-        </h1>
-    {% endfragment %}
-    {% fragment %}
-        {% set entry = craft.entries()
-            .section(['pokemon'])
-            .id(signals.entryId)
-            .one() %}
-        {{ include("_includes/pokemon-detail.twig", { pokemon: entry }, with_context = false) }}
-    {% endfragment %}
-    {% fragment %}
-        <div id="alert" class="alert alert-success">
-            Saved!
-        </div>
-    {% endfragment %}
+{% set section = craft.app.entries.sectionByHandle('pokemon') %}
+{% if currentUser and currentUser.can('saveEntries:' ~ section.uid) %}
+    {% set response = datastar.runAction('entries/save-entry', {
+        entryId: signals.entryId,
+        fields: signals.pokemonEntry
+    }) %}
+    {% if response.isSuccessful %}
+        {% fragment %}
+            <h1 id="title" class="text-5xl font-bold">
+                {{ signals.pokemonEntry.pokemonName }}
+            </h1>
+        {% endfragment %}
+        {% fragment %}
+            {% set entry = craft.entries()
+                .section(['pokemon'])
+                .id(signals.entryId)
+                .one() %}
+            {{ include("_includes/pokemon-detail.twig", { pokemon: entry }, with_context = false) }}
+        {% endfragment %}
+        {% fragment %}
+            <div id="alert" class="alert alert-success">
+                Saved!
+            </div>
+        {% endfragment %}
+    {% else %}
+        {% fragment %}
+            <div id="alert" class="alert alert-error">
+                {{ response.data.errors|first|first }}
+            </div>
+        {% endfragment %}
+    {% endif %}
 {% else %}
+    {# Output a permission error #}
     {% fragment %}
-        <div id="alert" class="alert alert-error">
-            {{ response.data.errors|first|first }}
-        </div>
+        {{ include("_includes/permission-error.twig", {}, with_context = false) }}
     {% endfragment %}
 {% endif %}
